@@ -16,5 +16,6 @@ Acceptance Criteria
     visit venues_path
 
     expect(page).to have_content "Venues"
+    expect(page).to have_content "The Sinclair"
   end
 end

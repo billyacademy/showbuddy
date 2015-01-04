@@ -1,1 +1,10 @@
 <h1>Venues</h1>
+
+<% @venues.each do |venue| %>
+  <div>
+    <%= venue.name %><br>
+    <%= venue.address_line_1 %><br>
+    <%= venue.city %>, <%= venue.state %> <%= venue.zip %><br>
+    <%= venue.website %>
+  </div>
+<% end  %>
