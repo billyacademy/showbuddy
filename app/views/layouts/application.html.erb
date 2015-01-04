@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <div><%= link_to "Venue List", venues_path %></div>
 <head>
   <title>Showbuddy</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -7,7 +8,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= link_to "Venue List", venues_path %>
 
 <%= yield %>
 
