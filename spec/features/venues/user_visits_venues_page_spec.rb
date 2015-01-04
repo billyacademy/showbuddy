@@ -7,15 +7,18 @@ I want to view a list of venues
 So that I can discover my venue options
 
 Acceptance Criteria
-[ ] I must see all venue names on index
-[ ] I must see the url for each venue
+[x] I must be able to navigate to the venues page from anywhere on the website
+[x] I must see all venue names on index
+[x] I must see a link for each venue's official website
 ) do
   scenario "user views all venues" do
 
     FactoryGirl.create(:venue)
-    visit venues_path
+    visit root_path
+    click_on "Venue List"
 
     expect(page).to have_content "Venues"
     expect(page).to have_content "The Sinclair"
+    expect(page).to have_content "The Sinclair's Official Website"
   end
 end
