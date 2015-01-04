@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
-  <div><%= link_to "Venue List", venues_path %></div>
+  <div>
+    <%= link_to "Venue List", venues_path %> |
+    <%= link_to "Add a Concert", new_concert_path %>
+  </div>
 <head>
   <title>Showbuddy</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>

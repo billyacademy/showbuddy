@@ -21,6 +21,5 @@ Acceptance Criteria
   expect(page).to have_content new_venue.name
   expect(page).to have_content new_venue.address_line_1
   expect(page).to have_content "#{new_venue.name}'s Official Website"
-
   end
 end
