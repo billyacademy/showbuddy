@@ -1,0 +1,6 @@
+<%= form_for @concert do |f|%>
+  <div>
+    <%= f.label :venue_id %>
+    <%= f.select :venue_id, options_for_select(@venues) %>
+  </div>
+<% end %>
