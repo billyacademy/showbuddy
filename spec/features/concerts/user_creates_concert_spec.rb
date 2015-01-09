@@ -19,10 +19,10 @@ Acceptance Criteria
     visit root_path
     click_on "Add a Concert"
 
-    select :venue_id
-    fill_in :date
-    fill_in :time
-    fill_in :artist_1
-    fill_in :show_url
+    select "The Sinclair", from: "Venue"
+    fill_in "Date", with: "12/01/204"
+    fill_in "Time", with: "9:00pm"
+    fill_in "Artist 1", with: "Blink-182"
+    fill_in "Url", with: "www.ticketmaster.com"
   end
 end
