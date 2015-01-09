@@ -11,6 +11,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'zurb-foundation'
+gem 'jquery-ui-rails', '~>5.0.3'
 
 group :development, :test do
   gem 'rspec-rails'

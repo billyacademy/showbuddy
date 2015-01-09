@@ -3,4 +3,29 @@
     <%= f.label :venue_id %>
     <%= f.select :venue_id, options_for_select(@venues) %>
   </div>
+
+  <div>
+    <%= f.label :date %><br>
+    <%= f.text_field :date, class: "concert_date" %>
+  </div>
+
+  <div>
+    <%= f.label :time %>
+    <%= f.text_field :time %>
+  </div>
+
+  <div>
+    <%= f.label :artist_1 %>
+    <%= f.text_field :artist_1 %>
+  </div>
+
+  <div>
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+  </div>
+
+  <div>
+    <%= f.button "Submit"%>
+  </div>
+
 <% end %>
