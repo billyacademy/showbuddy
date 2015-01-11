@@ -1,0 +1,5 @@
+<% @concerts.each do |concert| %>
+<%= concert.venue.name %><br>
+<%= link_to concert.artist_1, concert_path(concert.id) %><br>
+<%= concert.date %><br><br>
+<% end %>

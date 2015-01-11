@@ -23,7 +23,7 @@ Acceptance Criteria
     fill_in "Date", with: "12/01/204"
     fill_in "Time", with: "9:00pm"
     fill_in "Artist 1", with: "Blink-182"
-    fill_in "Url", with: "www.ticketmaster.com"
+    fill_in "Link to Event", with: "www.ticketmaster.com"
 
     click_on "Submit"
 
