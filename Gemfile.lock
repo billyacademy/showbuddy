@@ -63,6 +63,7 @@ GEM
       railties (>= 3.0.0)
     globalid (0.3.0)
       activesupport (>= 4.1.0)
+    hashie (3.3.2)
     hike (1.2.3)
     i18n (0.7.0)
     jbuilder (2.2.6)
@@ -88,6 +89,9 @@ GEM
     multi_json (1.10.1)
     nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
+    omniauth (1.2.2)
+      hashie (>= 1.2, < 4)
+      rack (~> 1.0)
     pg (0.18.0)
     pry (0.10.1)
       coderay (~> 1.1.0)
@@ -191,6 +195,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails (~> 5.0.3)
   launchy
+  omniauth
   pg
   pry-rails
   rails (= 4.2.0)
