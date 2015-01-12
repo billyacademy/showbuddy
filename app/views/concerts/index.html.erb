@@ -1,5 +1,24 @@
-<% @concerts.each do |concert| %>
-<%= concert.venue.name %><br>
-<%= link_to concert.artist_1, concert_path(concert.id) %><br>
-<%= concert.date %><br><br>
-<% end %>
+<div class="row">
+  <div class="small-3 small-centered columns">
+    <div class="transbox2">
+      <h1>
+        Concerts
+      </h1>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="small-3 small-centered columns">
+    <div class="transbox">
+      <% @concerts.each do |concert| %>
+      <p>
+      <%= link_to concert.artist_1, concert_path(concert.id) %><br>
+      <%= concert.venue.name %><br>
+      <%= concert.date %><br><br>
+      </p>
+      <% end %>
+    </div>
+  </div>
+</div>
