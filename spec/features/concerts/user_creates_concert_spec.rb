@@ -11,6 +11,7 @@ Acceptance Criteria
 [x] I must only be able to add a concert at a listed venue
 [x] I must supply the concert's Date, Time, 1 artist, venue, show url
 [x] I may optionally supply the ticket price
+[x] If I do not supply valid information I should be given error messages
 ) do
 
   before :each do
@@ -23,7 +24,7 @@ Acceptance Criteria
     click_on "Add a Concert"
 
     select "The Sinclair", from: "Venue"
-    fill_in "Date", with: "12/01/204"
+    fill_in "Date", with: "12/01/2014"
     fill_in "Time", with: "9:00pm"
     fill_in "Artist 1", with: "Blink-182"
     fill_in "Link to Event", with: "www.ticketmaster.com"
@@ -39,7 +40,7 @@ Acceptance Criteria
     visit new_concert_path
 
     select "The Sinclair", from: "Venue"
-    fill_in "Date", with: "12/01/204"
+    fill_in "Date", with: "12/01/2014"
     fill_in "Time", with: "9:00pm"
     fill_in "Link to Event", with: "www.ticketmaster.com"
     fill_in "Price", with: 18
