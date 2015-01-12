@@ -9,7 +9,7 @@ body {
 .boxed {
   align: center;
   background: #333333;
-  opacity: .4;
+  opacity: .5;
 }
 
 div.transbox {
@@ -39,6 +39,5 @@ div.transbox2 {
 div.transbox2 h1 {
   vertical-align: center;
   margin: 30px 40px;
-  font-weight: bold;
   color: #FFFFFF;
 }

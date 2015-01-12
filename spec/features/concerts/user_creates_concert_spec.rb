@@ -13,9 +13,12 @@ Acceptance Criteria
 [x] I may optionally supply the ticket price
 ) do
 
+  before :each do
+    FactoryGirl.create(:venue)
+  end
+
   scenario "user successfully adds a concert" do
 
-    FactoryGirl.create(:venue)
     visit root_path
     click_on "Add a Concert"
 
@@ -30,4 +33,24 @@ Acceptance Criteria
 
     expect(page).to have_content("The Sinclair")
   end
+
+  scenario "user submits a concert with insufficient information" do
+
+    visit new_concert_path
+
+    select "The Sinclair", from: "Venue"
+    fill_in "Date", with: "12/01/204"
+    fill_in "Time", with: "9:00pm"
+    fill_in "Link to Event", with: "www.ticketmaster.com"
+    fill_in "Price", with: 18
+
+    save_and_open_page
+    click_on "Submit"
+
+    expect(page).to have_content("artist_1 can't be blank")
+  end
+
+
+
+
 end

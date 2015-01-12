@@ -43,6 +43,13 @@
     <div data-interchange="[/app/assets/images/showbuddy-bg2.jpg, (default)], [/app/assets/images/showbuddy-bg2.jpg, (large)]"></div>
 
     <div class="content">
+
+      <% flash.each do |key, value| %>
+        <div data-alert class="flash flash-<%= key %> alert-box">
+          <%= value %>
+        </div>
+      <% end %>
+
     <%= yield %>
     </div>
 

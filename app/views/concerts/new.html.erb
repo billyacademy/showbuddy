@@ -1,1 +1,8 @@
+<% if @concert.errors.any? %>
+  <% @concert.errors.each do |attribute, message| %>
+    <%= attribute %>
+    <%= message %><br>
+  <% end %>
+<% end  %>
+
 <%= render 'new_concert_form' %>
