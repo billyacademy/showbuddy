@@ -30,15 +30,28 @@
             <li><%= link_to "Home", root_path %></li>
         </ul>
         <ul class="right">
-          <li class="divider"</li>
+          <li class="divider">
           <li><%= link_to "Concert List", concerts_path %></li>
-          <li class="divider"</li>
+          <li class="divider">
           <li><%= link_to "Venue List", venues_path %></li>
-          <li class="divider"</li>
-          <li> <%= link_to "Add a Concert", new_concert_path %></li>
+          <li class="divider">
+          <li><%= link_to "Add a Concert", new_concert_path %></li>
+
+          <% if current_user %>
+            <li class="divider">
+              <li><%= link_to "Profile - #{current_user.name}", user_path(current_user) %></li>
+            <li class="divider">
+              <li><%= link_to "Sign out", signout_path %></li>
+          <% else %>
+            <li class="divider">
+              <li><%= link_to "Sign in with Twitter", "/auth/twitter" %></li>
+          <% end %>
         <ul>
       </div>
     </nav>
+
+
+
 
     <div data-interchange="[/app/assets/images/showbuddy-bg2.jpg, (default)], [/app/assets/images/showbuddy-bg2.jpg, (large)]"></div>
 

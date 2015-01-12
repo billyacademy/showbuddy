@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'zurb-foundation'
 gem 'jquery-ui-rails', '~>5.0.3'
+gem 'omniauth-twitter'
 
 group :development, :test do
   gem 'rspec-rails'
@@ -22,4 +23,5 @@ group :development, :test do
   gem 'valid_attribute'
   gem 'shoulda-matchers'
   gem 'pry-rails'
+  gem 'dotenv-rails'
 end
