@@ -1,11 +1,26 @@
-<h1>Venues</h1>
-
-<% @venues.each do |venue| %>
-  <div>
-    <%= venue.name %><br>
-    <%= venue.address_line_1 %><br>
-    <%= venue.city %>, <%= venue.state %> <%= venue.zip %><br>
-    <%= link_to "#{venue.name}'s ShowBuddy Page", venue_path(venue.id) %><br>
-    <%= link_to "#{venue.name}'s Official Website", venue.website %><br><br>
+<div class="row">
+      <div class="small-3 small-centered columns">
+  <div class="transbox2">
+    <h1>
+        Venues
+    </h1>
+      </div>
   </div>
-<% end  %>
+</div>
+
+
+<div class="row">
+  <div class="small-3 small-centered columns">
+    <div class="transbox">
+      <% @venues.each do |venue| %>
+      <p>
+        <%= venue.name %><br>
+        <%= venue.address_line_1 %><br>
+        <%= venue.city %>, <%= venue.state %> <%= venue.zip %><br>
+        <%= link_to "#{venue.name}'s ShowBuddy Page", venue_path(venue.id) %><br>
+        <%= link_to "#{venue.name}'s Official Website", venue.website %><br><br>
+      </p>
+      <% end  %>
+    </div>
+  </div>
+</div>

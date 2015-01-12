@@ -3,4 +3,42 @@ body {
   background-color: #cccccc;
   background-repeat: no-repeat;
   background-size: 100%;
+  background-attachment: fixed;
+}
+
+.boxed {
+  align: center;
+  background: #333333;
+  opacity: .4;
+}
+
+div.transbox {
+  width: 500px;
+  height: 2000px;
+  /* margin: 30px 50px; */
+  background-color: #333333;
+  opacity: 0.6;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+div.transbox p {
+  margin: 30px 40px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+div.transbox2 {
+  width: 500px;
+  height: 100%;
+  /* margin: 30px 50px; */
+  background-color: #333333;
+  opacity: 0.6;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+div.transbox2 h1 {
+  vertical-align: center;
+  margin: 30px 40px;
+  font-weight: bold;
+  color: #FFFFFF;
 }
