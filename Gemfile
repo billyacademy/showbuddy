@@ -23,4 +23,5 @@ group :development, :test do
   gem 'valid_attribute'
   gem 'shoulda-matchers'
   gem 'pry-rails'
+  gem 'dotenv-rails'
 end
