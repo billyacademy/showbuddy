@@ -20,4 +20,12 @@ FactoryGirl.define do
     url "https://www.ticketmaster.com"
     venue
   end
+
+  FactoryGirl.define do
+    factory :user do
+      provider "twitter"
+      uid "2974985338"
+      name "Show__Buddy"
+    end
+  end
 end

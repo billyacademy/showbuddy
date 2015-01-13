@@ -13,10 +13,10 @@ Acceptance Criteria
   scenario "user successfully rsvps to a concert", focus: true do
 
     blink = FactoryGirl.create(:concert)
-    visit concert_path(blink)
-    save_and_open_page
+
+    visit concert_path(blink.id)
     click_on "I want to go!"
 
-    expect(page).to have_content "You have successfully RSVP'd to #{blink}"
+    expect(page).to have_content "You have successfully RSVP'd"
   end
 end
