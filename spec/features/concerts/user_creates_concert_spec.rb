@@ -45,7 +45,6 @@ Acceptance Criteria
     fill_in "Link to Event", with: "www.ticketmaster.com"
     fill_in "Price", with: 18
 
-    save_and_open_page
     click_on "Submit"
 
     expect(page).to have_content("artist_1 can't be blank")
