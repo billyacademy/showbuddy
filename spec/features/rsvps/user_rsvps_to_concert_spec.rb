@@ -15,6 +15,7 @@ Acceptance Criteria
     blink = FactoryGirl.create(:concert)
     user = FactoryGirl.create(:user)
     user2 = FactoryGirl.create(:user)
+    user3 = FactoryGirl.create(:user)
     sign_in_as(user)
 
     visit concert_path(blink.id)
@@ -30,6 +31,6 @@ Acceptance Criteria
     click_on "I want to go!"
 
     expect(page).to have_content  user.name
-    save_and_open_page
+    expect(page).to_not have_content  user3.name
   end
 end
