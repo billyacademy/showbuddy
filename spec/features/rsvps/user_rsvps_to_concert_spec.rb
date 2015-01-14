@@ -14,6 +14,8 @@ Acceptance Criteria
 
     blink = FactoryGirl.create(:concert)
     user = FactoryGirl.create(:user)
+    user2 = FactoryGirl.create(:user)
+    user3 = FactoryGirl.create(:user)
     sign_in_as(user)
 
     visit concert_path(blink.id)
@@ -21,5 +23,14 @@ Acceptance Criteria
 
     expect(page).to have_content "You have successfully RSVP'd"
     expect(page).to_not have_button "I want to go!"
+
+    click_link "Sign out"
+    sign_in_as(user2)
+
+    visit concert_path(blink.id)
+    click_on "I want to go!"
+
+    expect(page).to have_content  user.name
+    expect(page).to_not have_content  user3.name
   end
 end

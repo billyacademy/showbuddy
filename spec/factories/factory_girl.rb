@@ -24,8 +24,8 @@ FactoryGirl.define do
   FactoryGirl.define do
     factory :user do
       provider "twitter"
-      uid "2974985338"
-      name "Show__Buddy"
+      sequence(:uid) { |n| "297498533#{n}" }
+      sequence(:name) { |n| "Show__Buddy#{n}" }
     end
   end
 end
