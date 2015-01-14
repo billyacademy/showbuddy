@@ -2,4 +2,11 @@
 <%= @concert.date %><br>
 <%= @concert.time %><br>
 
-<%= button_to "I want to go!", concert_rsvps_path(params[:id]) %>
+
+
+<% if @rsvp.empty? %>
+  <%= button_to "I want to go!", concert_rsvps_path(params[:id]) %>
+<% else %>
+  <%= "You have already RSVP'd for this concert!" %>
+  <h1> Others who want to go see <%= @concert.artist_1 %>: </h1>
+<% end %>

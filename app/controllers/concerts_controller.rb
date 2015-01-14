@@ -21,6 +21,8 @@ class ConcertsController < ApplicationController
 
     def show
       @concert = Concert.find(params[:id])
+      @rsvp = Rsvp.where(user_id: current_user, concert_id: params[:id])
+      @rsvps = Rsvp.all
     end
 
     private
