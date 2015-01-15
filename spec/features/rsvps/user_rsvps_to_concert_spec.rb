@@ -10,7 +10,7 @@ Acceptance Criteria
 [x] I must be able to rsvp to a concert from the rsvp show page
 [x] I should be to see other rsvps once I have rsvp'd to the show
 ) do
-  scenario "user successfully rsvps to a concert", focus: true do
+  scenario "user successfully rsvps to a concert" do
 
     blink = FactoryGirl.create(:concert)
     user = FactoryGirl.create(:user)
