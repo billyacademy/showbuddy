@@ -6,6 +6,10 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
 
+  namespace :admin do
+    resources :users, only: [:index, :destroy]
+  end
+
   root 'welcomes#index'
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get]
   match 'auth/failure', to: redirect('/'), via: [:get]
