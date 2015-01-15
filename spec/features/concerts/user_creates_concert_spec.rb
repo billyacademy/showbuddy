@@ -49,8 +49,4 @@ Acceptance Criteria
 
     expect(page).to have_content("artist_1 can't be blank")
   end
-
-
-
-
 end
