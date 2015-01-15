@@ -10,7 +10,7 @@ Acceptance Criteria
 [x] I must see the user's screen name
 
 ) do
-  scenario "user successfully rsvps to a concert", focus: true do
+  scenario "user successfully rsvps to a concert" do
 
     blink = FactoryGirl.create(:concert)
     user = FactoryGirl.create(:user)

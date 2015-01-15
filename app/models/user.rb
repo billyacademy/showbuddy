@@ -11,8 +11,8 @@ class User < ActiveRecord::Base
 
 
   def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.provider = auth.provider
+    where(provider: auth["provider"], uid: auth["uid"]).first_or_create do |user|
+      user.provider = "twitter"
       user.uid      = auth.uid
       user.name     = auth.info.name
       user.save
