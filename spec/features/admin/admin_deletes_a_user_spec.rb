@@ -22,6 +22,7 @@ Acceptance Criteria
     expect(page).to have_content "User successfully deleted"
     expect(page).to_not have_content user.name
   end
+  
     scenario "user unsuccessfully navigates to admin only page" do
 
     user = FactoryGirl.create(:user)
