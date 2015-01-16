@@ -1,0 +1,8 @@
+<% if @venue.errors.any? %>
+  <% @venue.errors.each do |attribute, message| %>
+    <%= attribute %>
+    <%= message %><br>
+  <% end %>
+<% end  %>
+
+<%= render 'new_venue_form' %>
