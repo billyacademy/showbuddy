@@ -1,7 +1,8 @@
 <h1> Admin: Venues </h1>
-<ul>
+
   <h1><% @venues.each do |venue| %></h1>
-  <li><%= venue.id %>. <%= link_to venue.name, venue_path(venue) %><%= button_to "Delete #{venue.name}", admin_venue_path(venue), method: :delete, data: { confirm: "Are you sure?"} %>
-  </li>
+    <ul>
+    <%= link_to venue.name, venue_path(venue) %><%= button_to "Delete #{venue.name}", admin_venue_path(venue), method: :delete, data: { confirm: "Are you sure?"} %>
+    <%= link_to "Update #{venue.name}", edit_admin_venue_path(venue) %>
+    </ul><br>
   <% end %>
-</ul>
