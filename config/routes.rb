@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users, only: [:index, :destroy]
-    resources :venues, only: [:index, :destroy, :new]
+    resources :venues, only: [:index, :destroy, :new, :update, :edit, :create]
   end
 
   root 'welcomes#index'

@@ -29,6 +29,21 @@ class Admin::VenuesController < ApplicationController
     end
   end
 
+  def edit
+    @venue = Venue.find(params[:id])
+  end
+
+  def update
+    @venue = Venue.find(params[:id])
+    if @venue.update_attributes(venue_params)
+      flash[:notice] = "You have successfully updated the venue"
+      redirect_to admin_venues_path
+    else
+      redirect_to edit_admin_venue_path()
+      flash[:alert] = "You must be signed in to update a venue."
+    end
+  end
+
   private
 
   def venue_params
