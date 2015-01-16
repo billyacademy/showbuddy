@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :venues, only: [:index, :show]
+  resources :venues, only: [:index, :show, :create]
   resources :concerts, only: [:new, :index, :create, :show] do
     resources :rsvps, only: [:create, :new]
   end
@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users, only: [:index, :destroy]
+    resources :venues, only: [:index, :destroy, :new]
   end
 
   root 'welcomes#index'
