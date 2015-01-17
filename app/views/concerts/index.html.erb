@@ -3,7 +3,13 @@
     <div class="transbox2">
       <h1>
         Concerts
+    <% form_tag concerts_path, method: 'get' do %>
+      <%= text_field_tag :search %>
+      <%= submit_tag "Search Concerts" %>
       </h1>
+    <% end %>
+
+
     </div>
   </div>
 </div>
