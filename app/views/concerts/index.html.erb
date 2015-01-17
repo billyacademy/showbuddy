@@ -4,10 +4,14 @@
       <h1>
         Concerts
       </h1>
+      <%= form_tag concerts_path, method: :get do %>
+        <%= label_tag :query, "Search" %>
+        <%= text_field_tag :query %>
+        <%= submit_tag "Search Concerts" %>
+      <% end %>
     </div>
   </div>
 </div>
-
 
 <div class="row">
   <div class="large-6 columns large-offset-3">

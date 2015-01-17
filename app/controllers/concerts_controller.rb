@@ -5,7 +5,11 @@ class ConcertsController < ApplicationController
     end
 
     def index
-      @concerts = Concert.all
+      if params[:query]
+        @concerts = Concert.text_search(params[:query])
+      else
+        @concerts = Concert.all
+      end
     end
 
     def create
