@@ -2,7 +2,8 @@ class Venue < ActiveRecord::Base
   has_many :concerts, dependent: :destroy
 
   validates :name,
-    presence: :true
+    presence: :true,
+    uniqueness: true
 
   validates :address_line_1,
     presence: :true
