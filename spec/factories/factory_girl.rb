@@ -2,7 +2,7 @@ require 'factory_girl_rails'
 
 FactoryGirl.define do
   factory :venue do
-    name "The Sinclair"
+    sequence(:name) { |n| "The Sinclair#{n}" }
     address_line_1 "52 Church Street"
     city "Cambridge"
     state "MA"

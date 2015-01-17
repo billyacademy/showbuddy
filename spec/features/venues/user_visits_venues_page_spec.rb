@@ -13,12 +13,12 @@ Acceptance Criteria
 ) do
   scenario "user views all venues" do
 
-    FactoryGirl.create(:venue)
+    venue = FactoryGirl.create(:venue)
     visit root_path
     click_on "Venue List"
 
     expect(page).to have_content "Venues"
-    expect(page).to have_content "The Sinclair"
-    expect(page).to have_content "The Sinclair's Official Website"
+    expect(page).to have_content "#{venue.name}"
+    expect(page).to have_content "#{venue.name}'s Official Website"
   end
 end
