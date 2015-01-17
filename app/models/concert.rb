@@ -17,4 +17,10 @@ class Concert < ActiveRecord::Base
 
     validates :url,
     presence: true
+
+    def self.search(query)
+      where("plainto_tsquery(?) @@ " +
+      "to_tsvector('english', artist_1 || ' ' || artist_2)",
+      query)
+    end
 end
