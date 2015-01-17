@@ -11,7 +11,7 @@ def venue_names(venues)
   end
 end
 
-
+Concert.delete_all
 Venue.delete_all
 Venue.create(
   name: 'The Sinclair',
@@ -103,10 +103,28 @@ zip: "02048",
 website: "http://www.thexfinitycenter.com/"
 )
 
-
-
-
-
-
-
 venue_names(Venue)
+
+Concert.create(
+date: "2015/01/30",
+artist_1: "Four Year Strong",
+venue_id: Venue.find_by(name: "The Sinclair").id,
+url: "http://www.sinclaircambridge.com/event/746601-four-year-strong-cambridge/",
+time: "6pm"
+)
+
+Concert.create(
+date: "2015/02/06",
+artist_1: "Kevin Devine",
+venue_id: Venue.find_by(name: "The Sinclair").id,
+url: "http://www.sinclaircambridge.com/event/712883-kevin-devine-into-it-over-cambridge/",
+time: "8pm"
+)
+
+Concert.create(
+date: "2015/02/16",
+artist_1: "Doomtree",
+venue_id: Venue.find_by(name: "The Sinclair").id,
+url: "http://www.sinclaircambridge.com/event/733271-doomtree-cambridge/",
+time: "8pm"
+)
