@@ -1,4 +1,11 @@
-<%= @venue.name %><br>
-<%= @venue.address_line_1 %><br>
+<h1><%= @venue.name %></h1><br>
+<h2><%= @venue.address_line_1 %><br>
 <%= @venue.city %>, <%= @venue.state %> <%= @venue.zip %><br>
-<%= link_to "#{@venue.name}'s Official Website", @venue.website %><br><br>
+<%= link_to "#{@venue.name}'s Official Website", @venue.website %><br><br></h2>
+
+<% if @next_concert != nil %>
+Next Show:<br>
+<%= @next_concert.artist_1 %><br>
+<%= @next_concert.date %><br>
+<%= @next_concert.time %>
+<% end %>

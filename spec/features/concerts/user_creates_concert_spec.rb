@@ -24,8 +24,10 @@ Acceptance Criteria
     click_on "Add a Concert"
 
     select "The Sinclair", from: "Venue"
-    fill_in "Date", with: "12/01/2014"
-    fill_in "Time", with: "9:00pm"
+    select "2015", from: "concert_date_1i"
+    select "January", from: "concert_date_2i"
+    select "29", from: "concert_date_3i"
+    select "9pm", from: "concert_time"
     fill_in "Artist 1", with: "Blink-182"
     fill_in "Link to Event", with: "www.ticketmaster.com"
     fill_in "Price", with: 18
@@ -40,8 +42,10 @@ Acceptance Criteria
     visit new_concert_path
 
     select "The Sinclair", from: "Venue"
-    fill_in "Date", with: "12/01/2014"
-    fill_in "Time", with: "9:00pm"
+    select "2015", from: "concert_date_1i"
+    select "January", from: "concert_date_2i"
+    select "29", from: "concert_date_3i"
+    select "9pm", from: "concert_time"
     fill_in "Link to Event", with: "www.ticketmaster.com"
     fill_in "Price", with: 18
 

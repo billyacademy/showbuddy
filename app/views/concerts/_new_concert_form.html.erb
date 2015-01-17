@@ -9,12 +9,15 @@
 
   <div>
     <%= f.label :date %><br>
-    <%= f.text_field :date, class: "concert_date" %>
+    <%= f.date_select :date, order: [:month, :day, :year] %>
   </div>
 
   <div>
     <%= f.label :time %>
-    <%= f.text_field :time %>
+    <%= f.select :time, options_for_select([["12pm", "12pm"], ["1pm", "1pm"],
+    ["2pm", "2pm"], ["3pm", "3pm"], ["4pm", "4pm"], ["5pm", "5pm"],
+    ["6pm", "6pm"], ["7pm", "7pm"], ["8pm", "8pm"], ["9pm", "9pm"],
+    ["10pm", "10pm"], ["11pm", "11pm"], ["Midnight", "Midnight"]]) %>
   </div>
 
   <div>
