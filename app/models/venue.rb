@@ -18,7 +18,9 @@ class Venue < ActiveRecord::Base
     character state identifier"}
 
   validates :zip,
-    presence: :true
+    presence: :true,
+    numericality: true,
+    length: { is: 5 }
 
   validates :website,
     presence: :true
