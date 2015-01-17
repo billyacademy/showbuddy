@@ -1,5 +1,5 @@
 class Venue < ActiveRecord::Base
-  has_many :concerts
+  has_many :concerts, dependent: :destroy
 
   validates :name,
     presence: :true
