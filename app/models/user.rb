@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :rsvps, dependent: :destroy
+
   validates :uid,
     presence: true,
     uniqueness: true
