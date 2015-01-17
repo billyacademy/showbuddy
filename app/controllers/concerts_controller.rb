@@ -6,7 +6,7 @@ class ConcertsController < ApplicationController
 
     def index
       if params[:query]
-        @concerts = Concert.search(params[:query])
+        @concerts = Concert.text_search(params[:query])
       else
         @concerts = Concert.all
       end

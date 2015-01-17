@@ -21,6 +21,7 @@ Acceptance Criteria
     fill_in "Search", with: "New"
     click_button "Search Concerts"
 
+
     expect(page).to have_link("New Found Glory", href: concert_path(new_found_glory))
     expect(page).to have_link("Brand New", href: concert_path(brand_new))
     expect(page).to_not have_content(new_found_glory.artist_1)
