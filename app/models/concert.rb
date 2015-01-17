@@ -1,5 +1,6 @@
 class Concert < ActiveRecord::Base
   belongs_to :venue
+  has_many :rsvps, dependent: :destroy
 
   validates :artist_1,
     presence: true
