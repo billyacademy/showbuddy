@@ -1,4 +1,5 @@
 class Venue < ActiveRecord::Base
+  paginates_per 10
   has_many :concerts, dependent: :destroy
 
   validates :name,
