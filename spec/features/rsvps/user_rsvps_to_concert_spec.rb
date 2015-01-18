@@ -10,7 +10,7 @@ Acceptance Criteria
 [x] I must be able to rsvp to a concert from the rsvp show page
 [x] I should be to see other rsvps once I have rsvp'd to the show
 ) do
-  scenario "user successfully rsvps to a concert" do
+  scenario "user successfully rsvps to a concert", focus: true do
 
     blink = FactoryGirl.create(:concert)
     user = FactoryGirl.create(:user)
@@ -19,6 +19,7 @@ Acceptance Criteria
     sign_in_as(user)
 
     visit concert_path(blink.id)
+    fill_in "Comment", with: "Blink-182 is my favorite, please go with me!"
     click_on "I want to go!"
 
     expect(page).to have_content "You have successfully RSVP'd"
@@ -29,8 +30,9 @@ Acceptance Criteria
 
     visit concert_path(blink.id)
     click_on "I want to go!"
-
+    save_and_open_page
     expect(page).to have_content  user.name
     expect(page).to_not have_content  user3.name
+    expect(page).to have_content "Blink-182 is my favorite, please go with me!"
   end
 end
