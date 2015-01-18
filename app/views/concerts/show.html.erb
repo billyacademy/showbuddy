@@ -2,10 +2,16 @@
 <%= @concert.date %><br>
 <%= @concert.time %><br>
 
-
-
 <% if @rsvp.empty? %>
-  <%= button_to "I want to go!", concert_rsvps_path(params[:id]) %>
+  <%= form_for [@concert, @new_rsvp] do |f| %>
+    <div>
+      <%= f.label :comment %>
+      <%= f.text_field :comment %>
+    </div>
+    <div>
+      <%= f.button "I want to go!"%>
+    </div>
+  <% end %>
 <% else %>
   <%= "You have already RSVP'd for this concert!" %>
   <h1> Others who want to go see <%= @concert.artist_1 %>: </h1>
@@ -13,6 +19,7 @@
     <% if rsvp.concert_id == params[:id].to_i && rsvp.user_id != current_user.id %>
       <%= rsvp.user.name %><br>
       <%= image_tag rsvp.user.image %>
+      <%= rsvp.comment %>
       <%= button_to "Buddy up!" %>
     <% end %>
   <% end %>
