@@ -14,6 +14,7 @@ gem 'zurb-foundation'
 gem 'jquery-ui-rails', '~>5.0.3'
 gem 'omniauth-twitter'
 gem 'kaminari'
+gem 'coveralls', require: false
 
 group :development, :test do
   gem 'rspec-rails'
