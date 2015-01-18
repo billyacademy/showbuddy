@@ -11,7 +11,8 @@
   <h1> Others who want to go see <%= @concert.artist_1 %>: </h1>
   <% @rsvps.each do |rsvp| %>
     <% if rsvp.concert_id == params[:id].to_i && rsvp.user_id != current_user.id %>
-      <%= rsvp.user.name %>
+      <%= rsvp.user.name %><br>
+      <%= image_tag rsvp.user.image %>
       <%= button_to "Buddy up!" %>
     <% end %>
   <% end %>
