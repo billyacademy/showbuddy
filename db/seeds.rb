@@ -283,7 +283,7 @@ time: "7pm"
 Concert.create(
 date: "2015/08/18",
 artist_1: "Nickelback",
-venue_id: Venue.find_by(name: "Xfinity Center").id,
+venue_id: Venue.find_by(name: "The Xfinity Center").id,
 url: "http://www.ticketliquidator.com/tix/tickets.aspx?evtid=2444067&utm_medium=aff&utm_source=ir&utm_campaign=90434",
 time: "7pm"
 )
