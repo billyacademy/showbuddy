@@ -10,7 +10,7 @@ Acceptance Criteria
 [x] I must see the user's screen name
 
 ) do
-  scenario "user visits another user's profile page", focus: true do
+  scenario "user visits another user's profile page" do
 
     blink = FactoryGirl.create(:concert)
     user = FactoryGirl.create(:user)
