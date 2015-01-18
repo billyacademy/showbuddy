@@ -10,11 +10,12 @@ Acceptance Criteria
 [x] I must see the user's screen name
 
 ) do
-  scenario "user successfully rsvps to a concert" do
+  scenario "user visits another user's profile page", focus: true do
 
     blink = FactoryGirl.create(:concert)
     user = FactoryGirl.create(:user)
-    user2 = FactoryGirl.create(:user)
+    user2 = FactoryGirl.create(:user, image:
+      "http://pbs.twimg.com/profile_images/556868208989184002/_bvUho6r_normal.jpeg")
 
     sign_in_as(user)
 
