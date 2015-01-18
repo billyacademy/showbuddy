@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
       user.provider = "twitter"
       user.uid      = auth.uid
       user.name     = auth.info.name
+      user.image    = auth.info.image
       user.save
     end
   end
@@ -26,6 +27,7 @@ class User < ActiveRecord::Base
       user.provider = auth["provider"]
       user.uid = auth["uid"]
       user.name = auth["info"]["nickname"]
+      user.image = auth["info"]["image"]
     end
   end
 end
