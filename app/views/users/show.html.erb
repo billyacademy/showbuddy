@@ -1,2 +1,52 @@
 <%= @user.name %><br><br>
-<%= image_tag @user.image.sub("_normal", "_bigger") %>
+<%= image_tag @user.image.sub("_normal", "_bigger") %><br>
+
+  <div class="large-3 columns">
+<% if current_user.id == params[:id].to_i %>
+    Pending Invites<br><br>
+    <% @pending_invites.each do |invite| %>
+      Sender's User ID
+      <%= invite.sender_id  %><br>
+      Recipient's User ID
+      <%= invite.receiver_id  %><br>
+      Concert ID
+      <%= invite.concert_id  %><br><br>
+  <% end %>
+  </div>
+
+  <div class="large-3 columns">
+      Waiting for Responses<br><br>
+      <% @waiting_for_responses.each do |invite| %>
+        Sender's User ID
+        <%= invite.sender_id  %><br>
+        Recipient's User ID
+        <%= invite.receiver_id  %><br>
+        Concert ID
+        <%= invite.concert_id  %><br><br>
+      <% end %>
+    </div>
+
+    <div class="large-3 columns">
+      Confirmed Matches<br><br>
+      <% @confirmed_matches.each do |invite| %>
+        Sender's User ID
+        <%= invite.sender_id  %><br>
+        Recipient's User ID
+        <%= invite.receiver_id  %><br>
+        Concert ID
+        <%= invite.concert_id  %><br><br>
+      <% end %>
+    </div>
+
+    <div class="large-3 columns">
+      Rejections<br><br>
+      <% @rejections.each do |invite| %>
+        Sender's User ID
+        <%= invite.sender_id  %><br>
+        Recipient's User ID
+        <%= invite.receiver_id  %><br>
+        Concert ID
+        <%= invite.concert_id  %><br><br>
+      <% end %>
+    </div>
+<% end %>
