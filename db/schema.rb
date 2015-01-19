@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150118200001) do
+ActiveRecord::Schema.define(version: 20150119134401) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(version: 20150118200001) do
   end
 
   add_index "concerts", ["venue_id"], name: "index_concerts_on_venue_id", using: :btree
+
+  create_table "matches", force: :cascade do |t|
+    t.integer "sender_id"
+    t.integer "receiver_id"
+    t.integer "concert_id"
+    t.string  "status",      default: "pending", null: false
+  end
+
+  add_index "matches", ["sender_id", "receiver_id", "concert_id"], name: "index_matches_on_sender_id_and_receiver_id_and_concert_id", unique: true, using: :btree
 
   create_table "rsvps", force: :cascade do |t|
     t.integer  "user_id",    null: false
