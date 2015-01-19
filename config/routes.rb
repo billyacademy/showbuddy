@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :venues, only: [:index, :show, :create]
   resources :concerts, only: [:new, :index, :create, :show] do
     resources :rsvps, only: [:create, :new]
+    resources :matches, only: [:create, :new]
   end
 
   resources :users, only: [:show]
