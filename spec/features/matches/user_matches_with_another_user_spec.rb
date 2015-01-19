@@ -30,10 +30,9 @@ Acceptance Criteria
 
     visit concert_path(blink.id)
     click_on "I want to go!"
+    click_button "Buddy up!"
 
-    click_link "Buddy up!"
-    click_button "Let's go together!"
-    
+    expect(page).to have_content "A request to buddy up has been sent to #{user.name}"
     expect(page).to have_content "Request Pending..."
   end
 
