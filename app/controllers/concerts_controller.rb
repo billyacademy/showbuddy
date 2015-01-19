@@ -24,10 +24,10 @@ class ConcertsController < ApplicationController
     end
 
     def show
+      @rsvps = Rsvp.where(concert_id: params[:id])
       @concert = Concert.find(params[:id])
+      @rsvp = Rsvp.where(user_id: current_user.id, concert_id: params[:id])
       @new_rsvp = Rsvp.new
-      @rsvp = Rsvp.where(user_id: current_user, concert_id: params[:id])
-      @rsvps = Rsvp.all
     end
 
     private
