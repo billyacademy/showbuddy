@@ -15,12 +15,17 @@
 <% else %>
   <%= "You have already RSVP'd for this concert!" %>
   <h1> Others who want to go see <%= @concert.artist_1 %>: </h1>
-  <% @rsvps.each do |rsvp| %>
-    <% if rsvp.concert_id == params[:id].to_i && rsvp.user_id != current_user.id %>
-      <%= rsvp.user.name %><br>
-      <%= image_tag rsvp.user.image %>
-      <%= rsvp.comment %>
-      <%= button_to "Buddy up!" %>
+    <% @rsvps.each do |rsvp| %>
+      <% if rsvp.concert_id == params[:id].to_i && rsvp.user_id != current_user.id %>
+        <%= rsvp.user.name %><br>
+        <%= image_tag rsvp.user.image %>
+        <%= rsvp.comment %>
+        <% if Match.find_by(sender_id: current_user.id, concert_id: params[:id], receiver_id: rsvp.user.id).nil? &&
+          Match.find_by(sender_id: rsvp.user.id, concert_id: params[:id], receiver_id: current_user.id).nil?  %>
+          <%= button_to "Buddy up!", concert_matches_path(params[:id], rsvp.user_id) %>
+        <% else %>
+          <%= "Pending..." %>
+        <% end %>
+      <% end %>
     <% end %>
-  <% end %>
 <% end %>
