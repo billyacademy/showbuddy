@@ -14,6 +14,7 @@ gem 'zurb-foundation'
 gem 'omniauth-twitter'
 gem 'kaminari'
 gem 'coveralls', require: false
+gem 'rails_12factor'
 
 group :development, :test do
   gem 'rspec-rails'
