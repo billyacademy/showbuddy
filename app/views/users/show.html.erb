@@ -1,54 +1,53 @@
 <%= @user.name %><br><br>
 <%= image_tag @user.image.sub("_normal", "_bigger") %><br>
 
-  <div class="large-3 columns">
-<% if current_user.id == params[:id].to_i %>
-    Pending Invites<br><br>
-    <% @pending_invites.each do |invite| %>
-      Sender's User ID
-      <%= invite.sender_id  %><br>
-      Recipient's User ID
-      <%= invite.receiver_id  %><br>
-      Concert ID
-      <%= invite.concert_id  %><br><br>
-  <% end %>
+<div class="large-3 columns">
+  <% if current_user.id == params[:id].to_i %>
+      Pending Invites<br><br>
+      <% @pending_invites.each do |invite| %>
+      Status: <%= invite.status %><br>
+      Sender's Name: <%= User.find(invite.sender_id).name  %><br>
+      Recipient:  <%= User.find(invite.receiver_id).name  %><br>
+      Concert: <%= Concert.find(invite.concert_id).artist_1 %><br><br>
+    <% end %>
   </div>
 
   <div class="large-3 columns">
-      Waiting for Responses<br><br>
-      <% @waiting_for_responses.each do |invite| %>
-        Sender's User ID
-        <%= invite.sender_id  %><br>
-        Recipient's User ID
-        <%= invite.receiver_id  %><br>
-        Concert ID
-        <%= invite.concert_id  %>
-        <%= button_to "Accept" %>
-        <%= button_to "Reject" %><br><br>
-      <% end %>
-    </div>
+    Waiting for Responses<br><br>
+    <% @waiting_for_responses.each do |invite| %>
+      Status: <%= invite.status %><br>
+      Sender's Name: <%= User.find(invite.sender_id).name  %><br>
+      Recipient:  <%= User.find(invite.receiver_id).name  %><br>
+      Concert:  <%= Concert.find(invite.concert_id).artist_1  %>
+      <%= button_to "Accept", concert_match_path(invite.concert_id, invite.id, status: "confirmed", sender_id: invite.sender_id, receiver_id: invite.receiver_id), method: :put %>
+      <%= button_to "Reject", concert_match_path(invite.concert_id, invite.id, status: "declined", sender_id: invite.sender_id, receiver_id: invite.receiver_id), method: :put %><br><br>
+    <% end %>
+  </div>
 
-    <div class="large-3 columns">
-      Confirmed Matches<br><br>
-      <% @confirmed_matches.each do |invite| %>
-        Sender's User ID
-        <%= invite.sender_id  %><br>
-        Recipient's User ID
-        <%= invite.receiver_id  %><br>
-        Concert ID
-        <%= invite.concert_id  %><br><br>
-      <% end %>
-    </div>
+  <div class="large-3 columns">
+    Confirmed Matches<br><br>
+    <% @confirmed_matches.each do |invite| %>
+      Status: <%= invite.status %><br>
+      Sender's Name: <%= User.find(invite.sender_id).name  %><br>
+      Recipient:  <%= User.find(invite.receiver_id).name  %><br>
+      Concert: <%= Concert.find(invite.concert_id).artist_1 %><br><br>
+      <a class="twitter-mention-button"
+      href="https://twitter.com/intent/tweet?screen_name=#{User.find(invite.sender_id).name}">
+      Tweet to <%= User.find(invite.sender_id).name %>
+    </a>
+    <script>
+    window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+    </script>
+    <% end %>
+  </div>
 
-    <div class="large-3 columns">
-      Rejections<br><br>
-      <% @rejections.each do |invite| %>
-        Sender's User ID
-        <%= invite.sender_id  %><br>
-        Recipient's User ID
-        <%= invite.receiver_id  %><br>
-        Concert ID
-        <%= invite.concert_id  %><br><br>
-      <% end %>
-    </div>
-<% end %>
+  <div class="large-3 columns">
+    Rejections<br><br>
+    <% @rejections.each do |invite| %>
+      Status: <%= invite.status %><br>
+      Sender's Name: <%= User.find(invite.sender_id).name  %><br>
+      Recipient:  <%= User.find(invite.receiver_id).name  %><br>
+      Concert: <%= Concert.find(invite.concert_id).artist_1 %><br><br>
+    <% end %>
+  <% end %>
+</div>

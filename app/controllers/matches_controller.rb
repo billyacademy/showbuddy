@@ -16,7 +16,13 @@ class MatchesController < ApplicationController
   end
 
   def update
-    
+    @match = Match.find(params[:id])
+    if @match.update(status: params[:status]) && @match.status == "confirmed"
+      flash[:notice] = "You have accepted the request to go to the show!"
+      redirect_to user_path(current_user)
+    elsif @match.update(status: params[:status]) && @match.status == "declined"
+      flash[:notice] = "You have declined the request to go to the show!"
+      redirect_to user_path(current_user)
+    end
   end
-  private
 end
