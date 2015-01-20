@@ -2,10 +2,13 @@ body {
   background-image: url("showbuddy-bg2.jpg");
   background-color: #cccccc;
   background-repeat: no-repeat;
-  background-size: 100%;
-  background-attachment: fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  width: 100% !important;
+  z-index: 0;
 }
-
 .boxed {
   align: center;
   background: #333333;
@@ -16,7 +19,7 @@ div.transbox {
   width: 500px;
   height: 2000px;
   background-color: #333333;
-  opacity: 0.6;
+  opacity: 0.9;
   filter: alpha(opacity=60); /* For IE8 and earlier */
 }
 
@@ -31,7 +34,7 @@ div.transbox2 {
   height: 100%;
   /* margin: 30px 50px; */
   background-color: #333333;
-  opacity: 0.6;
+  opacity: 0.9;
   filter: alpha(opacity=60); /* For IE8 and earlier */
 }
 
