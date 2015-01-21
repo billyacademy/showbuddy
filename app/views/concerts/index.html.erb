@@ -17,22 +17,21 @@
   <div class="large-6 columns large-offset-3">
     <div class="transbox">
       <% @concerts.each do |concert| %>
-        <div class="headliners">
-          <p><%= link_to concert.artist_1, concert_path(concert.id) %></p><br>
-        </div>
-        <p><% if !concert.artist_2.nil? %>
-          <%= link_to concert.artist_2, concert_path(concert.id) %><br>
-        <% end %>
+          <p><%= link_to concert.artist_1, concert_path(concert.id) %><br>
+          <% if !concert.artist_2.nil? %>
+            <%= link_to concert.artist_2, concert_path(concert.id) %><br>
+          <% end %>
 
-        <% if !concert.artist_3.nil? %>
-          <%= link_to concert.artist_3, concert_path(concert.id) %><br>
-        <% end %>
+          <% if !concert.artist_3.nil? %>
+            <%= link_to concert.artist_3, concert_path(concert.id) %><br>
+          <% end %>
 
-        <% if !concert.artist_4.nil? %>
-          <%= link_to concert.artist_4, concert_path(concert.id) %><br>
-        <% end %>
-        <%= link_to concert.venue.name, venue_path(concert.venue) %><br>
-        <%= concert.date %><br><br>
+          <% if !concert.artist_4.nil? %>
+            <%= link_to concert.artist_4, concert_path(concert.id) %><br>
+          <% end %>
+          <%= link_to concert.venue.name, venue_path(concert.venue) %><br>
+          <%= concert.date %><br>
+          Going: <%= concert.rsvps.count %><br><br>
         </p>
       <% end %>
       <%= paginate @concerts %>
