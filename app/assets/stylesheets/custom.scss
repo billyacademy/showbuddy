@@ -30,6 +30,12 @@ div.transbox {
 div.transbox p {
   margin: 30px 40px;
   color: #FFFFFF;
+  font-family: 'Cabin', sans-serif;
+  text-align: center;
+}
+div.transbox h2 {
+  font-family: 'Cabin', sans-serif;
+  text-align: center;
 }
 
 div.transbox2 {
@@ -44,9 +50,11 @@ div.transbox2 {
 }
 
 div.transbox2 h1 {
-  vertical-align: center;
   margin: 30px 40px;
+  margin-top: 0px;
   color: #FFFFFF;
+  font-family: 'Cabin', sans-serif;
+  text-align: center;
 }
 
 div.center {
@@ -95,4 +103,15 @@ div.concert-form h2 {
 
 label {
   color: white;
+}
+
+.home-page h1, .home-page h2, .home-page h3, .home-page h4, .home-page h5, .home-page h6 {
+  font-family: 'Lobster';
+  text-align: center;
+}
+
+.content, .content h3 {
+  align: center;
+  font-family: 'Cabin', sans-serif;
+  text-align: center;
 }

@@ -14,6 +14,7 @@ gem 'omniauth-twitter'
 gem 'kaminari'
 gem 'coveralls', require: false
 gem 'nilify_blanks'
+gem "font-awesome-rails"
 
 group :production do
   gem 'rails_12factor'
