@@ -1,4 +1,5 @@
 class Concert < ActiveRecord::Base
+  nilify_blanks
   paginates_per 10
   belongs_to :venue
   has_many :rsvps, dependent: :destroy
