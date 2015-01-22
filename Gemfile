@@ -13,7 +13,10 @@ gem 'zurb-foundation'
 gem 'omniauth-twitter'
 gem 'kaminari'
 gem 'coveralls', require: false
-gem 'rails_12factor'
+
+group :production do
+  gem 'rails_12factor'
+end
 
 group :development, :test do
   gem 'rspec-rails'
@@ -25,4 +28,5 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'pry-rails'
   gem 'dotenv-rails'
+  gem 'selenium-webdriver'
 end
