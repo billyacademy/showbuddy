@@ -48,7 +48,7 @@ Acceptance Criteria
     fill_in "Price", with: 18
 
     click_button "Submit"
-    save_and_open_page
+
     expect(page).to have_content("artist_1 can't be blank")
   end
 end
