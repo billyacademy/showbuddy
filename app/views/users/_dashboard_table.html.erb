@@ -1,0 +1,19 @@
+<div id="dash-content">
+  <table style="background-color: #333333;" align="center">
+    <thead>
+      <tr>
+        <th width="200" id="waiting">Pending Requests</th>
+        <th width="200" id="waiting">Invites awaiting response</th>
+        <th width="200" id="green">Confirmed Matches</th>
+        <th width="200" id="red">Non-Matches</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class= "yellow"><%= @waiting_for_responses.count %></td>
+        <td class= "yellow"><%= @waiting_for_responses.count %></td>
+        <td class= "green"><%= @confirmed_matches.count %></td>
+        <td class= "red"><%= @rejections.count %></td>
+      </tr>
+    </tbody>
+</div>
