@@ -16,8 +16,8 @@ Acceptance Criteria
   new_venue = FactoryGirl.create(:venue)
 
   visit venues_path
-  click_on "#{new_venue.name}'s ShowBuddy Page"
-  
+  click_on "#{new_venue.name}"
+
   expect(page).to have_content new_venue.name
   expect(page).to have_content new_venue.address_line_1
   expect(page).to have_content "#{new_venue.name}'s Official Website"

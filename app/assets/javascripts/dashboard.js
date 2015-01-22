@@ -51,13 +51,13 @@ $(function() {
     $dashContent.hide();
     $rejectionsContent.toggle();
 
-    $dash.on("click", function(event) {
-      event.preventDefault();
-      $rejectionsContent.hide();
-      $responsesContent.hide();
-      $matchesContent.hide();
-      $invitesContent.hide();
-      $dashContent.toggle();
+  $dash.on("click", function(event) {
+    event.preventDefault();
+    $rejectionsContent.hide();
+    $responsesContent.hide();
+    $matchesContent.hide();
+    $invitesContent.hide();
+    $dashContent.toggle();
     });
   });
 });

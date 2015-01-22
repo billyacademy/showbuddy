@@ -49,7 +49,7 @@
 
                   <%= render partial: "user_status", locals: { invite: invite } %>
 
-                    <%= button_to "Accept", concert_match_path(invite.concert_id, invite.id, status: "confirmed", sender_id: invite.sender_id, receiver_id: invite.receiver_id), method: :put %>
+                  <%= link_to "Accept", concert_match_path(invite.concert_id, invite.id, status: "confirmed", sender_id: invite.sender_id, receiver_id: invite.receiver_id), method: :put %>
                     <%= button_to "Reject", concert_match_path(invite.concert_id, invite.id, status: "declined", sender_id: invite.sender_id, receiver_id: invite.receiver_id), method: :put %><br><br>
                   <% end %>
                 </div>
@@ -59,16 +59,17 @@
                   <% @confirmed_matches.each do |invite| %>
 
                   <%= render partial: "user_status", locals: { invite: invite } %>
-
+                    
                     <a class="twitter-mention-button"
-                    href="https://twitter.com/intent/tweet?screen_name=#{User.find(invite.sender_id).name}">
-                      Tweet to <%= User.find(invite.sender_id).name %>
-                    </a>
+                    href=<%="https://twitter.com/intent/tweet?screen_name=#{User.find(invite.receiver_id).name}"%>>
+                      </a>
+
                     <script>
                       window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
-                    </script>
+                    </script><br><br>
                   <% end %>
                 </div>
+
 
                 <div class="large-12 columns" id="rejection-content">
                   Rejections<br><br>
