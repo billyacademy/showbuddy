@@ -102,6 +102,9 @@ GEM
     minitest (5.5.0)
     multi_json (1.10.1)
     netrc (0.10.2)
+    nilify_blanks (1.2.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
     nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
     oauth (0.4.7)
@@ -240,6 +243,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   launchy
+  nilify_blanks
   omniauth-twitter
   pg
   pry-rails

@@ -13,6 +13,7 @@ gem 'zurb-foundation'
 gem 'omniauth-twitter'
 gem 'kaminari'
 gem 'coveralls', require: false
+gem 'nilify_blanks'
 
 group :production do
   gem 'rails_12factor'
