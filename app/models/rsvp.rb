@@ -7,6 +7,4 @@ class Rsvp < ActiveRecord::Base
 
   validates :concert_id,
     presence: true
-
-
 end
