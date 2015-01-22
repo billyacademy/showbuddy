@@ -1,4 +1,5 @@
-<h4><%= @concert.artist_1 %><br></h4>
+<div class="center">
+  <h4><%= @concert.artist_1 %><br></h4>
 <%= @concert.artist_2 %><br>
 <%= @concert.artist_3 %><br>
 <%= @concert.artist_4 %><br>
@@ -17,7 +18,10 @@
   <% end %>
 <% else %>
   <%= "You are currently signed up to go!" %>
-  <h1> Others who want to go see <%= @concert.artist_1 %>: </h1>
+</div>
+
+<div class="center-white">
+  <h1> Guest List </h1>
 
     <% @rsvps.each do |rsvp| %>
       <% if rsvp.concert_id == params[:id].to_i && rsvp.user_id != current_user.id %>
@@ -28,8 +32,10 @@
           Match.find_by(sender_id: rsvp.user.id, concert_id: params[:id], receiver_id: current_user.id).nil?  %>
           <%= button_to "Buddy up!", concert_matches_path(params[:id], rsvp.user_id) %>
         <% else %>
-          <%= "Request Pending..." %>
+          <br><%= "Request Pending..." %>
         <% end %>
       <% end %>
+      <br>
     <% end %>
+</div>
 <% end %>

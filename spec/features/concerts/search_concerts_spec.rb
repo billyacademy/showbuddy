@@ -7,6 +7,7 @@ So that I can be informed on details of concerts I want to attend
 
 Acceptance Criteria
 [x] A user must be able to search for a concert
+[x] A user must see results based on their search
   ) do
   scenario "fill in search form and view results" do
     the_sinclair = FactoryGirl.create(:venue, id: 2, name: "The Sinclair")

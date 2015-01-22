@@ -1,53 +1,91 @@
-<%= @user.name %><br><br>
-<%= image_tag @user.image.sub("_normal", "_bigger") %><br>
+  <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.1.1/js/foundation.min.js"></script>
+  <script> $(document).ready(function() {    $(document).foundation();    });</script>
 
-<div class="large-3 columns">
-  <% if current_user.id == params[:id].to_i %>
-      Pending Invites<br><br>
-      <% @pending_invites.each do |invite| %>
-      Status: <%= invite.status %><br>
-      Sender's Name: <%= User.find(invite.sender_id).name  %><br>
-      Recipient:  <%= User.find(invite.receiver_id).name  %><br>
-      Concert: <%= Concert.find(invite.concert_id).artist_1 %><br><br>
-    <% end %>
+<% if current_user.id != params[:id].to_i %>
+  <h2 align="center" font-color="white"><%= image_tag @user.image.sub("_normal", "_bigger") %>
+  <%= @user.name %></h2>
+<% else %>
+  <div class="row">
+    <div class="small-12 columns end">
+      <div class="off-canvas-wrap docs-wrap">
+        <div class="inner-wrap">
+          <nav class="tab-bar">
+            <section class="left-small">
+                <a class="left-off-canvas-toggle menu-icon"> <span> </span> </a>
+              </section>
+              <section class="middle tab-bar-section">
+                <h1 class="title">Dashboard</h1>
+              </section>
+            </nav>
+            <aside class="left-off-canvas-menu">
+              <ul class="off-canvas-list">
+                <li> <label> Dashboard Options </label> </li>
+                <li> <a href="" id="invites">Pending Invites</a> </li>
+                <li> <a href="" id="responses"> Waiting for Responses </a> </li>
+                <li> <a href="" id="confirmations"> Confirmed Matches </a> </li>
+                <li> <a href="" id="rejections"> Rejections </a> </li>
+                <li> <a href="" id="dash"> Dashboard Statistics </a> </li>
+              </ul>
+            </aside>
+            <section class="main-section">
+              <div class="row">
+                <div class="small-12 columns">
+
+
+                <h2 align="center" font-color="white"><%= image_tag @user.image.sub("_normal", "_bigger") %>
+                  <%= @user.name %></h2>
+
+                <div class="large-3 columns" id="invites-content">
+                  Pending Invites<br><br>
+                  <% @pending_invites.each do |invite| %>
+                    <%= render partial: "user_status", locals: { invite: invite } %>
+                  <% end %>
+                </div>
+
+                <div class="large-3 columns" id="response-content">
+                  Waiting for Responses<br><br>
+                  <% @waiting_for_responses.each do |invite| %>
+
+                  <%= render partial: "user_status", locals: { invite: invite } %>
+
+                  <%= link_to "Accept", concert_match_path(invite.concert_id, invite.id, status: "confirmed", sender_id: invite.sender_id, receiver_id: invite.receiver_id), method: :put %>
+                    <%= button_to "Reject", concert_match_path(invite.concert_id, invite.id, status: "declined", sender_id: invite.sender_id, receiver_id: invite.receiver_id), method: :put %><br><br>
+                  <% end %>
+                </div>
+
+                <div class="large-3 columns" id="match-content">
+                  Confirmed Matches<br><br>
+                  <% @confirmed_matches.each do |invite| %>
+
+                  <%= render partial: "user_status", locals: { invite: invite } %>
+                    
+                    <a class="twitter-mention-button"
+                    href=<%="https://twitter.com/intent/tweet?screen_name=#{User.find(invite.receiver_id).name}"%>>
+                      </a>
+
+                    <script>
+                      window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+                    </script><br><br>
+                  <% end %>
+                </div>
+
+
+                <div class="large-12 columns" id="rejection-content">
+                  Rejections<br><br>
+                  <% @rejections.each do |invite| %>
+                    <%= render partial: "user_status", locals: { invite: invite } %>
+                  <% end %>
+                </div>
+
+                <%= render partial: "dashboard_table" %>
+
+                </div>
+              </div>
+            </section>
+          <a class="exit-off-canvas"></a>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="large-3 columns">
-    Waiting for Responses<br><br>
-    <% @waiting_for_responses.each do |invite| %>
-      Status: <%= invite.status %><br>
-      Sender's Name: <%= User.find(invite.sender_id).name  %><br>
-      Recipient:  <%= User.find(invite.receiver_id).name  %><br>
-      Concert:  <%= Concert.find(invite.concert_id).artist_1  %>
-      <%= button_to "Accept", concert_match_path(invite.concert_id, invite.id, status: "confirmed", sender_id: invite.sender_id, receiver_id: invite.receiver_id), method: :put %>
-      <%= button_to "Reject", concert_match_path(invite.concert_id, invite.id, status: "declined", sender_id: invite.sender_id, receiver_id: invite.receiver_id), method: :put %><br><br>
-    <% end %>
-  </div>
-
-  <div class="large-3 columns">
-    Confirmed Matches<br><br>
-    <% @confirmed_matches.each do |invite| %>
-      Status: <%= invite.status %><br>
-      Sender's Name: <%= User.find(invite.sender_id).name  %><br>
-      Recipient:  <%= User.find(invite.receiver_id).name  %><br>
-      Concert: <%= Concert.find(invite.concert_id).artist_1 %><br><br>
-      <a class="twitter-mention-button"
-      href="https://twitter.com/intent/tweet?screen_name=#{User.find(invite.sender_id).name}">
-      Tweet to <%= User.find(invite.sender_id).name %>
-    </a>
-    <script>
-    window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
-    </script>
-    <% end %>
-  </div>
-
-  <div class="large-3 columns">
-    Rejections<br><br>
-    <% @rejections.each do |invite| %>
-      Status: <%= invite.status %><br>
-      Sender's Name: <%= User.find(invite.sender_id).name  %><br>
-      Recipient:  <%= User.find(invite.receiver_id).name  %><br>
-      Concert: <%= Concert.find(invite.concert_id).artist_1 %><br><br>
-    <% end %>
-  <% end %>
-</div>
+<% end %>

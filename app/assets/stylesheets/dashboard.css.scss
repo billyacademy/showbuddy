@@ -1,0 +1,38 @@
+.small-12.columns.end {
+  margin-top: 7%;
+  background: rgba(68, 68, 68, 0.5);
+  padding: 0 0;
+  color: white;
+}
+
+.small-12.columns.end h4 {
+  color: white;
+}
+.small-12.columns.end h2 {
+  color: white;
+}
+
+table {
+  border-spacing: 0.5rem;
+  background: black;
+  color: white;
+  padding-bottom: 9px;
+  padding-top: 9px;
+}
+td {
+  padding: 0.5rem;
+  background: white;
+  color: white;
+}
+
+th#green {
+  background-color: #4DFA90;
+}
+
+th#red {
+  background-color: #FF5468;
+}
+
+th#waiting {
+  background-color: #FABE4D;
+}

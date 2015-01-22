@@ -14,7 +14,7 @@ class Admin::VenuesController < ApplicationController
     if @venue.save
       redirect_to admin_venues_path
     else
-      redirect_to new_admin_venue_path
+      render :new
     end
   end
 

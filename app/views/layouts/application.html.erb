@@ -25,7 +25,7 @@
     <nav class="top-bar">
       <section class="top-bar-section">
         <ul class="left">
-          <li class="divider"</li>
+          <li class="divider"></li>
             <li><%= link_to "Home", root_path %></li>
         </ul>
         <a class="twitter-mention-button"
@@ -49,14 +49,11 @@
 
           <% if current_user != nil %>
           <li class="divider">
-            <li><%= link_to "Dashboard", user_path(current_user) %></li>
+            <li><%= link_to "Dashboard", user_path(current_user) %>
+          </li>
             <% if current_user.admin == true %>
               <li class="has-dropdown">
                 <a href="">Admin</a>
-                <ul class="dropdown">
-                  <li class = "active"><a href="admin/venues">Venues</a></li>
-                  <li class= "active"><a href="admin/users">Users</a></li>
-                </ul>
               </li>
             <% end %>
           <% end %>
@@ -66,8 +63,8 @@
             <li class="divider">
               <li><%= link_to "Sign in with Twitter", "/auth/twitter" %></li>
           <% end %>
-        <ul>
-      </div>
+        </ul>
+      </section>
     </nav>
 
     <div data-interchange="[/app/assets/images/showbuddy-bg2.jpg, (default)], [/app/assets/images/showbuddy-bg2.jpg, (large)]"></div>

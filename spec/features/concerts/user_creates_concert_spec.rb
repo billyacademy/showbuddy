@@ -19,7 +19,6 @@ Acceptance Criteria
   end
 
   scenario "user successfully adds a concert" do
-
     visit root_path
     click_on "Add a Concert"
 
@@ -28,19 +27,18 @@ Acceptance Criteria
     select "January", from: "concert_date_2i"
     select "29", from: "concert_date_3i"
     select "9pm", from: "concert_time"
-    fill_in "Artist 1", with: "Blink-182"
+    fill_in "concert_artist_1", with: "Blink-182"
     fill_in "Link to Event", with: "www.ticketmaster.com"
     fill_in "Price", with: 18
 
     click_on "Submit"
-
     expect(page).to have_content("The Sinclair")
+    expect(page).to have_content("Blink-182")
   end
 
   scenario "user submits a concert with insufficient information" do
 
     visit new_concert_path
-
     select "The Sinclair", from: "Venue"
     select "2015", from: "concert_date_1i"
     select "January", from: "concert_date_2i"
@@ -49,7 +47,7 @@ Acceptance Criteria
     fill_in "Link to Event", with: "www.ticketmaster.com"
     fill_in "Price", with: 18
 
-    click_on "Submit"
+    click_button "Submit"
 
     expect(page).to have_content("artist_1 can't be blank")
   end
