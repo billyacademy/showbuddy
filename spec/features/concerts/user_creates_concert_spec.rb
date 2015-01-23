@@ -7,6 +7,7 @@ I want to add a concert to the website
 So that I can tag it as a concert that I want to see
 
 Acceptance Criteria
+[x] A user must be signed in to submit a concert
 [x] I must be able to navigate to a page where I can add a concert from anywhere
 [x] I must only be able to add a concert at a listed venue
 [x] I must supply the concert's Date, Time, 1 artist, venue, show url
@@ -19,6 +20,9 @@ Acceptance Criteria
   end
 
   scenario "user successfully adds a concert" do
+    user = FactoryGirl.create(:user)
+
+    sign_in_as(user)
     visit root_path
     click_on "Add a Concert"
 
@@ -36,8 +40,12 @@ Acceptance Criteria
   end
 
   scenario "user submits a concert with insufficient information" do
+    user = FactoryGirl.create(:user)
 
+    sign_in_as(user)
     visit new_concert_path
+
+
     select "The Sinclair", from: "Venue"
     select "2015", from: "concert_date_1i"
     select "January", from: "concert_date_2i"
@@ -48,5 +56,12 @@ Acceptance Criteria
     click_button "Submit"
 
     expect(page).to have_content("artist_1 can't be blank")
+  end
+
+  scenario "user unable to fill out form if not signed in" do
+
+    visit new_concert_path
+
+    expect(page).to have_content("You must be signed in to submit a concert")
   end
 end
