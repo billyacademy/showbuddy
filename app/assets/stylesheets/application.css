@@ -15,3 +15,6 @@
  *= require foundation_and_overrides
  *= require font-awesome
  */
+ .move-right .exit-off-canvas {
+   z-index: 1000;
+ }

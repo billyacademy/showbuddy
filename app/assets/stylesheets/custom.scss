@@ -74,7 +74,7 @@ div.center-white {
 
 }
 
-div.center h4 {
+div.center h3, div.center h6 {
   text-align: center;
   background-color: #333333;
   opacity: 0.9;
@@ -85,6 +85,7 @@ div.center h1 {
   text-align: center;
   background-color: #333333;
   opacity: 0.9;
+  color: white;
 }
 
 div.concert-form {
@@ -103,10 +104,15 @@ div.concert-form h2 {
 
 label {
   color: white;
+  opacity: 0.9;
 }
 
-.home-page h1, .home-page h2, .home-page h3, .home-page h4, .home-page h5, .home-page h6 {
+.home-page h1 {
   font-family: 'Lobster';
+  text-align: center;
+}
+.home-page h3 {
+  font-family: 'Play', sans-serif;
   text-align: center;
 }
 
@@ -118,4 +124,8 @@ label {
 
 .content a {
   color: white;
+}
+
+.inner-wrap {
+  min-height: 300px;
 }

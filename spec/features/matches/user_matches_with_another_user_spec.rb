@@ -19,7 +19,7 @@ Acceptance Criteria
     sign_in_as(user)
 
     visit concert_path(blink.id)
-    fill_in "Comment", with: "Blink-182 is my favorite, please go with me!"
+    fill_in "Add a message to be seen by potential buddies:", with: "Blink-182 is my favorite, please go with me!"
     click_on "I want to go!"
 
     expect(page).to have_content "You have successfully RSVP'd"
