@@ -9,7 +9,6 @@ describe Concert do
     it { should respond_to :artist_3 }
     it { should respond_to :artist_4 }
     it { should respond_to :venue_id }
-    it { should respond_to :price }
     it { should respond_to :url }
     it { should respond_to :created_at }
     it { should respond_to :updated_at }

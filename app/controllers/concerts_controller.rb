@@ -6,9 +6,9 @@ class ConcertsController < ApplicationController
 
     def index
       if params[:query]
-        @concerts = Concert.text_search(params[:query]).page(params[:page])
+        @concerts = Concert.text_search(params[:query]).page(params[:page]).order(:date)
       else
-        @concerts = Concert.all.page(params[:page])
+        @concerts = Concert.all.page(params[:page]).order(:date)
       end
     end
 
@@ -34,6 +34,6 @@ class ConcertsController < ApplicationController
 
     def concert_params
       params.require(:concert).permit(:date, :time, :artist_1, :artist_2, :artist_3,
-        :artist_4, :venue_id, :price, :url)
+        :artist_4, :venue_id, :url)
     end
 end

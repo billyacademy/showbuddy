@@ -29,7 +29,6 @@ Acceptance Criteria
     select "9pm", from: "concert_time"
     fill_in "concert_artist_1", with: "Blink-182"
     fill_in "Link to Event", with: "www.ticketmaster.com"
-    fill_in "Price", with: 18
 
     click_on "Submit"
     expect(page).to have_content("The Sinclair")
@@ -45,7 +44,6 @@ Acceptance Criteria
     select "29", from: "concert_date_3i"
     select "9pm", from: "concert_time"
     fill_in "Link to Event", with: "www.ticketmaster.com"
-    fill_in "Price", with: 18
 
     click_button "Submit"
 
