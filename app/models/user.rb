@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :rsvps, dependent: :destroy
-  has_many :matches
+  has_many :senders, through: :matches
+  has_many :receivers, through: :matches
 
   validates :uid,
     presence: true,
