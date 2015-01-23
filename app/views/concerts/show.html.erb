@@ -1,10 +1,10 @@
 <div class="center">
   <h4><%= @concert.artist_1 %><br></h4>
-<%= @concert.artist_2 %><br>
-<%= @concert.artist_3 %><br>
-<%= @concert.artist_4 %><br>
-<%= @concert.date %><br>
-<%= @concert.time %><br>
+  <%= @concert.artist_2 %><br>
+  <%= @concert.artist_3 %><br>
+  <%= @concert.artist_4 %><br>
+  <%= @concert.date %><br>
+  <%= @concert.time %><br>
 
 <% if @rsvp.empty? %>
   <%= form_for [@concert, @new_rsvp] do |f| %>
@@ -20,22 +20,7 @@
   <%= "You are currently signed up to go!" %>
 </div>
 
-<div class="center-white">
-  <h1> Guest List </h1>
+<%= render 'guest_list' %>
 
-    <% @rsvps.each do |rsvp| %>
-      <% if rsvp.concert_id == params[:id].to_i && rsvp.user_id != current_user.id %>
-        <%= rsvp.user.name %><br>
-        <%= image_tag rsvp.user.image %>
-        <%= rsvp.comment %>
-        <% if Match.find_by(sender_id: current_user.id, concert_id: params[:id], receiver_id: rsvp.user.id).nil? &&
-          Match.find_by(sender_id: rsvp.user.id, concert_id: params[:id], receiver_id: current_user.id).nil?  %>
-          <%= button_to "Buddy up!", concert_matches_path(params[:id], rsvp.user_id) %>
-        <% else %>
-          <br><%= "Request Pending..." %>
-        <% end %>
-      <% end %>
-      <br>
-    <% end %>
 </div>
 <% end %>
