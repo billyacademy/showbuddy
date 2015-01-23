@@ -10,9 +10,4 @@ class VenuesController < ApplicationController
   end
 
   private
-
-  def venue_params
-    params.require(:venue).permit(:name, :address_line_1, :address_line_2,
-    :city, :state, :zip, :website)
-  end
 end
