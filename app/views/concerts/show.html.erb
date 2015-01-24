@@ -1,13 +1,16 @@
 <div class="center">
   <h3><%= @concert.artist_1 %><br></h3>
-  <h6>Featuring...<h6>
-  <%= @concert.artist_2 %><% if !@concert.artist_2.nil? %>  <br> <% end %>
+  <% if !@concert.artist_2.nil? %>  <br>
+    <h6>Featuring...<h6>
+    <%= @concert.artist_2 %> <br>
+  <% end %>
   <%= @concert.artist_3 %><% if !@concert.artist_3.nil? %>  <br> <% end %>
   <%= @concert.artist_4 %><% if !@concert.artist_4.nil? %>  <br> <% end %>
-    <h6>@ <%= @concert.venue.name %></h6>
-  <br><%= @concert.date %><br>
-  <%= @concert.time %><br><br>
-
+    <h6>
+      @ <%= link_to @concert.venue.name, venue_path(@concert.venue) %>
+      <br><%= @concert.date %><br>
+      <%= @concert.time %><br><br>
+    <h6>
 <% if @rsvp.empty? %>
   <%= form_for [@concert, @new_rsvp] do |f| %>
     <div>

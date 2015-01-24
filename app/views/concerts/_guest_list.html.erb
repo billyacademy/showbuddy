@@ -7,7 +7,7 @@
     <%= rsvp.comment %>
       <% if Match.find_by(sender_id: current_user.id, concert_id: params[:id], receiver_id: rsvp.user.id).nil? &&
         Match.find_by(sender_id: rsvp.user.id, concert_id: params[:id], receiver_id: current_user.id).nil?  %>
-        <%= button_to "Buddy up!", concert_matches_path(params[:id], rsvp.user_id) %>
+        <%= button_to "Buddy up!", concert_matches_path(params[:id], rsvp.user_id), class: "tiny button" %>
       <% elsif Match.find_by(sender_id: current_user.id, concert_id: params[:id], receiver_id: rsvp.user.id).try(:status) == 'declined'||
         Match.find_by(sender_id: rsvp.user.id, concert_id: params[:id], receiver_id: current_user.id).try(:status) == 'declined' %>
         <br><%= "Declined" %>
