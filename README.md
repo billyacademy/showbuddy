@@ -15,10 +15,11 @@ Began outlining User Stories and the ER Diagram for ShowBuddy.  Eventually settl
 ![alt tag](er_diagram.png)
 
 
-January 3rd
+January 3rd  
+
 Created the rails application and began integrating RSpec / Capybara / FactoryGirl to begin to write feature tests.
 
-January 4th
+January 4th <br>
 Wrote tests for concerts, began seeding venues into the database, updated routes, added a welcome page (with slogan!)
 
 January 8th
