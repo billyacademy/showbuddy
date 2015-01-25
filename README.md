@@ -35,7 +35,7 @@ January 12th <br>
 - Added User table & model <br>
 - Added Twitter Authentication with the omniauth-twitter gem <br>
 - Did some twitter omniauth troubleshooting <br>
--Updated ENV file so that sensitive twitter information was not pushed to github
+- Updated ENV file so that sensitive twitter information was not pushed to github
 
 January 13th <br>
 - RSVPs are working as intended, a victory <br>
