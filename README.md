@@ -21,7 +21,7 @@ Users also have the ability to RSVP to concerts:
 Users can optionally buddy up with fellow concert goers:
 ![alt tag](buddy_up.png)
 
-The user who receives the request to buddy up is able to accept or deny the invite:
+The user who receives the request to buddy up is able to accept or reject the invite:
 ![alt tag](waiting_for_response.png)
 
 Once the match is confirmed by the recipient of the invite, each user is given
