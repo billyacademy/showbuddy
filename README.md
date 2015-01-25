@@ -10,20 +10,20 @@ Welcome Page:
 ![alt tag](home_page.png)
 
 Users have the ability to search for a concert:
-![alt tag](concert_search)
+![alt tag](concert_search.png)
 
 Users have the ability to submit concerts:
-![alt tag](add_concert)
+![alt tag](add_concert.png)
 
 Users also have the ability to RSVP to concerts:
-![alt tag](rsvp)
+![alt tag](rsvp.png)
 
 Users can optionally buddy up with fellow concert goers:
-![alt tag](buddy_up)
+![alt tag](buddy_up.png)
 
 The user who receives the request to buddy up is able to accept or deny the invite:
-![alt tag](waiting_for_response)
+![alt tag](waiting_for_response.png)
 
 Once the match is confirmed by the recipient of the invite, each user is given
 the option to tweet their new buddy and begin planning!
-![alt tag](confirmed_match)
+![alt tag](confirmed_match.png)
