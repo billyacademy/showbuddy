@@ -4,6 +4,8 @@
 ShowBuddy is a meet-up application geared towards music fans.
 It leverages the omniauth-twitter gem to authenticate users.
 
+ShowBuddy is currently accessible at http://showbuddy.herokuapp.com/
+
 Below are some screens of the application..
 
 Welcome Page:
