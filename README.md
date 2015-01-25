@@ -8,6 +8,14 @@ ShowBuddy is currently accessible at http://showbuddy.herokuapp.com/
 
 Below are some screens of the application..
 
+
+ER Diagram for ShowBuddy:
+
+![alt tag](er_diagram.png)
+
+
+
+
 Welcome Page:
 ![alt tag](home_page.png)
 
