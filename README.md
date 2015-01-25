@@ -111,7 +111,7 @@ January 24th <br>
 
 
 
-Below are some screens of the application..
+Below are some screens of the application..<br>
 Welcome Page:
 ![alt tag](home_page.png)
 

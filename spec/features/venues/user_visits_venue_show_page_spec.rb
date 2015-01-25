@@ -13,9 +13,13 @@ Acceptance Criteria
 ) do
   scenario "user visits a venue's page" do
 
+  user = FactoryGirl.create(:user)
   new_venue = FactoryGirl.create(:venue)
 
+  sign_in_as(user)
+
   visit venues_path
+
   click_on "#{new_venue.name}"
 
   expect(page).to have_content new_venue.name

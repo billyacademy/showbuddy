@@ -10,6 +10,7 @@ Acceptance Criteria
 [x] A user must see results based on their search
   ) do
   scenario "fill in search form and view results" do
+    user = FactoryGirl.create(:user)
     the_sinclair = FactoryGirl.create(:venue, id: 2, name: "The Sinclair")
     paradise_rock_club = FactoryGirl.create(:venue, id: 3, name: "Paradise Rock Club")
     brand_new = FactoryGirl.create(:concert, artist_1: "Brand New", venue_id: 2)
@@ -17,6 +18,8 @@ Acceptance Criteria
     new_found_glory = FactoryGirl.create(:concert, artist_1: "New Found Glory" , venue_id: 3)
     moving_moutains = FactoryGirl.create(:concert, artist_1: "Moving Mountains", venue_id: 3)
 
+    sign_in_as(user)
+    
     visit concerts_path
 
     fill_in "Search", with: "New"

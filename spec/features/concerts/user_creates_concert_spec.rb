@@ -62,6 +62,6 @@ Acceptance Criteria
 
     visit new_concert_path
 
-    expect(page).to have_content("You must be signed in to submit a concert")
+    expect(page).to have_content("You must be signed in to view that page!")
   end
 end

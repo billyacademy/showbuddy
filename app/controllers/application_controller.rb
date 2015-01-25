@@ -1,10 +1,19 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  before_filter :check_session
 
   private
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
+
+  def check_session
+    if !session[:user_id]
+      redirect_to root_path
+      flash[:message] = "You must be signed in to view that page!"
+    end
+  end
+
     helper_method :current_user
 end
