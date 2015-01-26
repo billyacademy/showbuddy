@@ -8,65 +8,64 @@
         <div class="inner-wrap">
           <nav class="tab-bar">
             <section class="left-small">
-                <a class="left-off-canvas-toggle menu-icon"> <span> </span> </a>
-              </section>
-              <section class="middle tab-bar-section">
-                <h1 class="title">Dashboard</h1>
-              </section>
-            </nav>
+              <a class="left-off-canvas-toggle menu-icon"> <span> </span> </a>
+            </section>
+            <section class="middle tab-bar-section">
+              <h1 class="title">Dashboard</h1>
+            </section>
+          </nav>
 
-            <%= render partial: "left_off_canvas_menu" %>
+          <%= render partial: "left_off_canvas_menu" %>
 
-            <section class="main-section">
-              <div class="row">
-                <div class="small-12 columns">
-
-
+          <section class="main-section">
+            <div class="row">
+              <div class="small-12 columns">
                 <h2 align="center" font-color="white"><%= image_tag @user.image.sub("_normal", "_bigger") %>
-                  <%= @user.name %></h2>
-
+                <%= @user.name %></h2>
                 <div class="large-12 columns" id="invites-content">
                   <h2>Pending Invites</h2>
                   <% @pending_invites.each do |invite| %>
-                    <%= render partial: "user_status", locals: { invite: invite } %><br>
-                  <% end %>
-                </div>
 
-                <div class="large-12 columns" id="response-content">
-                  <h2>Waiting for Responses</h2>
-                  <% @waiting_for_responses.each do |invite| %>
+                    <%= render partial: "user_status", locals: { invite: invite } %><br>
+
+                  <% end %>
+              </div>
+
+              <div class="large-12 columns" id="response-content">
+                <h2>Waiting for Responses</h2>
+                <% @waiting_for_responses.each do |invite| %>
 
                   <%= render partial: "user_status", locals: { invite: invite } %>
 
                   <%= link_to "Accept", concert_match_path(invite.concert_id, invite.id, status: "confirmed", sender_id: invite.sender_id, receiver_id: invite.receiver_id), method: :put, class: "success button" %>
-                    <%= link_to "Reject", concert_match_path(invite.concert_id, invite.id, status: "declined", sender_id: invite.sender_id, receiver_id: invite.receiver_id), method: :put, class: "alert button" %><br><br>
-                  <% end %>
-                </div>
+                  <%= link_to "Reject", concert_match_path(invite.concert_id, invite.id, status: "declined", sender_id: invite.sender_id, receiver_id: invite.receiver_id), method: :put, class: "alert button" %><br><br>
+                <% end %>
+              </div>
 
-                <div class="large-12 columns" id="match-content">
-                  <h2>Confirmed Matches</h2>
-                  <% @confirmed_matches.each do |invite| %>
+              <div class="large-12 columns" id="match-content">
+                <h2>Confirmed Matches</h2>
+                <% @confirmed_matches.each do |invite| %>
 
                   <%= render partial: "user_status", locals: { invite: invite } %>
-
                   <%= render partial: "tweet_at_logic", locals: { invite: invite } %>
 
-                  <% end %>
-                </div>
-
-
-                <div class="large-12 columns" id="rejection-content">
-                  <h2>Rejections</h2>
-                  <% @rejections.each do |invite| %>
-                    <%= render partial: "user_status", locals: { invite: invite } %>
-                  <% end %>
-                </div>
-                <div class="large-12 columns small-12 columns"
-                  <%= render partial: "dashboard_table" %>
-                </div>
-                </div>
+                <% end %>
               </div>
-            </section>
+
+              <div class="large-12 columns" id="rejection-content">
+                <h2>Rejections</h2>
+                <% @rejections.each do |invite| %>
+                  <%= render partial: "user_status", locals: { invite: invite } %>
+                <% end %>
+              </div>
+
+              <div class="large-12 columns small-12 columns"
+                <%= render partial: "dashboard_table" %>
+              </div>
+
+              </div>
+            </div>
+          </section>
           <a class="exit-off-canvas"></a>
         </div>
       </div>
