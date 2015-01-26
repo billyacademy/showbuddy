@@ -25,24 +25,21 @@ ShowBuddy is currently accessible at http://showbuddy.herokuapp.com/
   - Create a list of bands / artists
   - Create a section for users to rate bands (Love, Like, Dislike, Don't Know)
   - Weight those ratings
-    Love / Love +200/200
-    Love / Like +100/100
-    Love / Dislike +0/200
-    Love / Don't Know +0/25
-    Like / Like +100/100
-    Like / Dislike +0/50
-    Like / Don't Know +0/10
-    Dislike / Dislike +100/100
-    Dislike / Don't Know +0/0
-    Don't Know / Don't Know +25/25
 ```
+Imagine two users are rating a band, if user A loves the band and user b also loves the band then they will get 200 points out of a possible 200.<br>
+Whereas if user A likes a band and user B dislikes a band, their match will get 0 out of a possible 50 points.<br>
+
+Now when comparing two users for a match percent we can take their aggregate score across all bands that they have rated in common.<br>
+In the case above, user A and user B have two bands in common, scoring 200 out of 250.  Their match percentage would be 80%.
+
+Below is a table that encapsulates a rough draft of the ratings. <br>
 
 | | Love | Like | Dislike | Dont Know
 |------|----------|------|----------|----------
-|Love | `200 / 200` | `100/100` | `0/200`| `0/25`
-|Like |  `100/100`| `100/100`| `0/50`| `0/10`
-|Dislike | `0/200`| `0/50`| `100/100`| `0/0`
-|Dont Know | `0/25`| `0/10`| `0/0`| `25/25`
+|**Love** | `200 / 200` | `100/100` | `0/200`| `0/25`
+|**Like** |  `100/100`| `100/100`| `0/50`| `0/10`
+|**Dislike** | `0/200`| `0/50`| `100/100`| `0/0`
+|**Dont Know** | `0/25`| `0/10`| `0/0`| `25/25`
 
 
 ## Timeline:
