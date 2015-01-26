@@ -37,12 +37,12 @@ ShowBuddy is currently accessible at http://showbuddy.herokuapp.com/
     Don't Know / Don't Know +25/25
 ```
 
-    |                 | Love          | Like      | Dislike    | Don't Know |
+    |       test      | Love          | Like      | Dislike    | Don't Know |
     | ----------------|:-------------:| ---------:|-----------:|-----------:|
-    | **Love**        | 200 / 200     |  100/100  | 0/200      | 0/25       |
-    | **Like**        | 100/100       | 100/100   | 0/50       | 0/10       |
-    | **Dislike**     | 0/200         |   0/50    | 100/100    | 0/0        |
-    | **Don't Know**  | 0/25          |    0/10   | 0/0        | 25/25      |
+    | **Love**       | 200 / 200     |  100/100  | 0/200      | 0/25      |
+    | **Like**       | 100/100       | 100/100   | 0/50       | 0/10      |
+    | **Dislike**    | 0/200        |   0/50    | 100/100    | 0/0      |
+    | **Don't Know** | 0/25         |    0/10   | 0/0        | 25/25    |
 
 
 ## Timeline:
