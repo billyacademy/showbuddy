@@ -1,13 +1,51 @@
+# ShowBuddy
+
 [![Build Status](https://travis-ci.org/billyacademy/showbuddy.svg?branch=master)](https://travis-ci.org/billyacademy/showbuddy) [![Code Climate](https://codeclimate.com/github/billyacademy/showbuddy/badges/gpa.svg)](https://codeclimate.com/github/billyacademy/showbuddy) [![Coverage Status](https://coveralls.io/repos/billyacademy/showbuddy/badge.svg)](https://coveralls.io/r/billyacademy/showbuddy)
 
 
-ShowBuddy is a meet-up application geared towards music fans.
+ShowBuddy is a meet-up application geared towards music fans. <br>
 It leverages the omniauth-twitter gem to authenticate users.
 
 ShowBuddy is currently accessible at http://showbuddy.herokuapp.com/
 
+## Current Features
+```
+1. Users are able post upcoming concerts at local venues
+2. Users are able to RSVP to individual concerts
+3. A user is able send a request to buddy up with other users who are rsvp'd to the same concert
+4. A user who receives a request to buddy up can choose to accept or reject the request
+5. When two users have mutual interest in attending a show together a twitter button will appear on each user's confirmed matches section of their dashboard to help begin the conversation & planning
+6. Admins are able to Add, Update or Delete venues. Admins can delete user accounts
+7. A user can utilize search functionality to find concerts of the bands they want to see
+```
 
-Timeline:
+## Features in Process
+```
+1. Biggest priority is building a match percentage for users
+  - Create a list of bands / artists
+  - Create a section for users to rate bands (Love, Like, Dislike, Don't Know)
+  - Weight those ratings
+    Love / Love +200/200
+    Love / Like +100/100
+    Love / Dislike +0/200
+    Love / Don't Know +0/25
+    Like / Like +100/100
+    Like / Dislike +0/50
+    Like / Don't Know +0/10
+    Dislike / Dislike +100/100
+    Dislike / Don't Know +0/0
+    Don't Know / Don't Know +25/25
+
+
+    |                 | Love          | Like      | Dislike    | Don't Know |
+    | ----------------|:-------------:| ---------:|-----------:|-----------:|
+    | **Love**        | 200 / 200     |  100/100  | 0/200      | 0/25       |
+    | **Like**        | 100/100       | 100/100   | 0/50       | 0/10       |
+    | **Dislike**     | 0/200         |   0/50    | 100/100    | 0/0        |
+    | **Don't Know**  | 0/25          |    0/10   | 0/0        | 25/25      |
+```
+
+## Timeline:
 
 January 2nd
 Began outlining User Stories and the ER Diagram for ShowBuddy.  Eventually settled on this ER diagram
@@ -111,7 +149,7 @@ January 24th <br>
 
 
 
-Below are some screens of the application..<br>
+## Screen Shots
 Welcome Page:
 ![alt tag](home_page.png)
 
