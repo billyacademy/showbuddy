@@ -34,6 +34,7 @@ Now when comparing two users for a match percentage we can take their aggregate 
 In the case above, user A and user B have two bands in common, scoring 200 out of 250.  Their match percentage would be 80%.
 
 Below is a table that encapsulates a rough draft of the weighted rating system. <br>
+```
 
 | | Love | Like | Dislike | Dont Know
 |------|----------|------|----------|----------
@@ -41,7 +42,7 @@ Below is a table that encapsulates a rough draft of the weighted rating system. 
 |**Like** |  `100/100`| `100/100`| `0/50`| `0/10`
 |**Dislike** | `0/200`| `0/50`| `100/100`| `0/0`
 |**Dont Know** | `0/25`| `0/10`| `0/0`| `25/25`
-```
+
 
 ```
 2. Eventually have a friend system and chat system where users can either live chat or post private messages to each other - rather than rely on twitter <br>
