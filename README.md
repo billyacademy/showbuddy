@@ -44,6 +44,11 @@ ShowBuddy is currently accessible at http://showbuddy.herokuapp.com/
     | **Dislike**    | 0/200        |   0/50    | 100/100    | 0/0      |
     | **Don't Know** | 0/25         |    0/10   | 0/0        | 25/25    |
 
+    | First Header  | Second Header |
+    | ------------- | ------------- |
+    | Content Cell  | Content Cell  |
+    | Content Cell  | Content Cell  |
+
 
 ## Timeline:
 
