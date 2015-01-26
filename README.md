@@ -35,7 +35,7 @@ ShowBuddy is currently accessible at http://showbuddy.herokuapp.com/
     Dislike / Dislike +100/100
     Dislike / Don't Know +0/0
     Don't Know / Don't Know +25/25
-
+```
 
     |                 | Love          | Like      | Dislike    | Don't Know |
     | ----------------|:-------------:| ---------:|-----------:|-----------:|
@@ -43,7 +43,7 @@ ShowBuddy is currently accessible at http://showbuddy.herokuapp.com/
     | **Like**        | 100/100       | 100/100   | 0/50       | 0/10       |
     | **Dislike**     | 0/200         |   0/50    | 100/100    | 0/0        |
     | **Don't Know**  | 0/25          |    0/10   | 0/0        | 25/25      |
-```
+
 
 ## Timeline:
 
