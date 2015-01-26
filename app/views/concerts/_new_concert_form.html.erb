@@ -1,4 +1,4 @@
-<% if current_user != nil  %>
+
   <div class="concert-form">
     <div class="transbox">
     <%= form_for @concert do |f|%>
@@ -12,42 +12,42 @@
             </div>
           </div>
 
-        <div class="large-6 small-6 columns">
+        <div class="large-6 small-12 columns">
           <div>
             <%= f.label :artist_1 %>
             <%= f.text_field :artist_1 %>
           </div>
         </div>
 
-        <div class="large-6 small-6 columns">
+        <div class="large-6 small-12 columns">
           <div>
             <%= f.label :artist_2 %>
             <%= f.text_field :artist_2 %>
           </div>
         </div>
 
-        <div class="large-6 small-6 columns">
+        <div class="large-6 small-12 columns">
           <div>
             <%= f.label :artist_3 %>
             <%= f.text_field :artist_3 %>
           </div>
         </div>
 
-        <div class="large-6 small-6 columns">
+        <div class="large-6 small-12 columns">
           <div>
             <%= f.label :artist_4 %>
             <%= f.text_field :artist_4 %>
           </div>
         </div>
 
-        <div class="large-6 small-6 columns">
+        <div class="large-6 small-12 columns">
           <div>
             <%= f.label :date %>
             <%= f.date_select :date, order: [:month, :day, :year] %>
           </div>
         </div>
 
-        <div class="large-3 small-6 columns">
+        <div class="large-3 small-12 columns">
           <div>
             <%= f.label :time %>
             <%= f.select :time, options_for_select([["12pm", "12pm"], ["1pm", "1pm"],
@@ -64,7 +64,7 @@
           </div>
         </div>
 
-        <div class="large-3 small-6 columns">
+        <div class="large-3 small-12 columns">
           <div>
             <%= f.button "Submit"%>
           </div>
@@ -74,6 +74,3 @@
     <% end %>
   </div>
   </div>
-<% else %>
-  <% flash[:alert] = "You must be signed in to submit a concert" %>
-<% end %>
