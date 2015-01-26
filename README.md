@@ -37,18 +37,25 @@ ShowBuddy is currently accessible at http://showbuddy.herokuapp.com/
     Don't Know / Don't Know +25/25
 ```
 
-    |       test      | Love          | Like      | Dislike    | Don't Know |
+```
+    |                 | Love          | Like      | Dislike    | Don't Know |
     | ----------------|:-------------:| ---------:|-----------:|-----------:|
-    | **Love**       | 200 / 200     |  100/100  | 0/200      | 0/25      |
-    | **Like**       | 100/100       | 100/100   | 0/50       | 0/10      |
-    | **Dislike**    | 0/200        |   0/50    | 100/100    | 0/0      |
-    | **Don't Know** | 0/25         |    0/10   | 0/0        | 25/25    |
+    | Love            | 200 / 200     | 100/100   | 0/200      | 0/25       |
+    | Like            | 100/100       | 100/100   | 0/50       | 0/10       |
+    | Dislike         | 0/200         | 0/50      | 100/100    | 0/0        |
+    | Don't Know      | 0/25          | 0/10      | 0/0        | 25/25      |
+```
 
-    | First Header  | Second Header |
-    | ------------- | ------------- |
-    | Content Cell  | Content Cell  |
-    | Content Cell  | Content Cell  |
-
+|Type | Elements
+|------|----------
+|Headings | `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `h7`, `h8`
+|Prose |  `p`, `div`, `blockquote`
+|Formatted | `pre`
+| Inline | `b`, `i`, `strong`, `em`, `tt`, `code`, `ins`, `del`, `sup`, `sub`, `kbd`, `samp`, `q`, `var`
+| Lists | `ol`, `ul`, `li`, `dl`, `dt`, `dd`
+| Tables | `table`, `thead`, `tbody`, `tfoot`, `tr`, `td`, `th`
+| Breaks | `br`, `hr`
+| Ruby (East Asian) | `ruby`, `rt`, `rp`
 
 ## Timeline:
 
