@@ -8,7 +8,6 @@
     <% content_for :title, "ShowBuddy" %>
     <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAA////AHNz/wCurvwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAQEBAQEAAAAAAAAAAAABAQECAQEBAAAAAAAAAAAAAQABAQEAAQAAAAAAAAAAAAEBAQEBAQEAAAAAAAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAAAAADAwMAAAAAAAAAAAAAAAADAwMDAwAAAAAAAAAAAAAAAwMDAwMAAAAAAAAAAAAAAAADAAMAAP//AAD//wAA//8AAP//AADnPwAA938AAGA/AABAHwAAAAcAAMAXAADAFwAA4DcAAP/jAAD/wQAA/8EAAP/rAAA=" rel="icon" type="image/x-icon" />
   	<meta charset="utf-8" />
-
   	<!-- Uncomment to make IE8 render like IE7 -->
   	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
 
@@ -26,46 +25,58 @@
   </head>
 
   <body>
-    <nav class="top-bar">
+
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><%= link_to "Home", root_path %></h1>
+        </li>
+
+        <li class="toggle-topbar menu-icon">
+          <a href="#"><span>Menu</span></a>
+        </li>
+      </ul>
+
       <section class="top-bar-section">
-        <ul class="left">
-          <li class="divider"></li>
-            <li><%= link_to "Home", root_path %></li>
-        </ul>
-        <a class="twitter-mention-button"
-        href="https://twitter.com/intent/tweet?screen_name=show__buddy">
-        Tweet to @show__buddy
-      </a>
-      <script>
-      window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
-      </script>
+
         <ul class="right">
           <li class="divider">
-          <li><%= link_to "Concert List", concerts_path %></li>
-          <li class="divider">
-          <li><%= link_to "Venue List", venues_path %></li>
-          <li class="divider">
-          <li><%= link_to "Add a Concert", new_concert_path %></li>
-
-          <% if current_user %>
-            <li class="divider">
-
-
-          <% if current_user != nil %>
-          <li class="divider">
-            <li><%= link_to "Dashboard", user_path(current_user) %>
+            <li><%= link_to "Concert List", concerts_path %></li>
           </li>
-            <% if current_user.admin == true %>
+
+          <li class="divider">
+            <li><%= link_to "Venue List", venues_path %></li>
+          </li>
+
+          <li class="divider">
+            <li><%= link_to "Add a Concert", new_concert_path %></li>
+          </li>
+
+          <% if current_user.admin == true %>
+            <li class="divider">
               <li class="has-dropdown">
                 <a href="">Admin</a>
+                <ul class="dropdown">
+                  <li><%= link_to "Users",admin_users_path %></li>
+                  <li><%= link_to "Venues",admin_venues_path %></li>
+                </ul>
               </li>
-            <% end %>
+            </li>
           <% end %>
+
+          <% if current_user != nil %>
+            <li class="divider">
+              <li><%= link_to "Dashboard", user_path(current_user) %></li>
+            </li>
+
             <li class="divider">
               <li><%= link_to "Sign out", signout_path %></li>
+            </li>
           <% else %>
+
             <li class="divider">
               <li><%= link_to "Sign in with Twitter", "/auth/twitter" %></li>
+            </li>
           <% end %>
         </ul>
       </section>
@@ -84,5 +95,7 @@
     <%= yield %>
     </div>
 
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.1.1/js/foundation.min.js"></script>
   </body>
 </html>
