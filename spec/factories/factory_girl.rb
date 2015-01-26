@@ -26,6 +26,7 @@ FactoryGirl.define do
       provider "twitter"
       sequence(:uid) { |n| "297498533#{n}" }
       sequence(:name) { |n| "Show__Buddy#{n}" }
+      admin false
     end
   end
 end
