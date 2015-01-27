@@ -9,7 +9,7 @@ It leverages the omniauth-twitter gem to authenticate users.
 ShowBuddy is currently accessible at http://showbuddy.herokuapp.com/
 
 ## Current Features
-```
+
 1. Users are able post upcoming concerts at local venues
 2. Users are able to RSVP to individual concerts
 3. A user is able send a request to buddy up with other users who are rsvp'd to the same concert
@@ -17,24 +17,24 @@ ShowBuddy is currently accessible at http://showbuddy.herokuapp.com/
 5. When two users have mutual interest in attending a show together a twitter button will appear on each user's confirmed matches section of their dashboard to help begin the conversation & planning
 6. Admins are able to Add, Update or Delete venues. Admins can delete user accounts
 7. A user can utilize search functionality to find concerts of the bands they want to see
-```
+
 
 ## Features in Process
-```
+
 1. Biggest priority is building a match percentage for users
   - Create a list of bands / artists
   - Create a section for users to rate bands (Love, Like, Dislike, Don't Know)
   - Weight those ratings
-```
-```
+
+
 Imagine two users are rating a band, if user A loves the band and user B also loves the band then they will get 200 points out of a possible 200.<br>
-Whereas if user A likes a band and user B dislikes a band, their match will get 0 out of a possible 50 points.<br>
+Whereas if user A likes a band and user B dislikes a band, their match will get 0 out of a possible 50 points.
 
 Now when comparing two users for a match percentage we can take their aggregate score across all bands that they have rated in common.<br>
 In the case above, user A and user B have two bands in common, scoring 200 out of 250.  Their match percentage would be 80%.
 
 Below is a table that encapsulates a rough draft of the weighted rating system. <br>
-```
+
 
 | | Love | Like | Dislike | Dont Know
 |------|----------|------|----------|----------
@@ -43,12 +43,31 @@ Below is a table that encapsulates a rough draft of the weighted rating system. 
 |**Dislike** | `0/200`| `0/50`| `100/100`| `0/0`
 |**Dont Know** | `0/25`| `0/10`| `0/0`| `25/25`
 
+2. Create a friend and chat system where users can either live chat or post private messages to each other - rather than rely on twitter <br>
+3. Make user pages more descriptive, add some options to allow users to fill in "about me" type information
 
-```
-2. Eventually have a friend system and chat system where users can either live chat or post private messages to each other - rather than rely on twitter <br>
-3. Make user pages more descriptive, add some content to allow users to fill in "about me" type information
+## Screen Shots
+Welcome Page:
+![alt tag](home_page.png)
 
-```
+Users have the ability to search for a concert:
+![alt tag](concert_search.png)
+
+Users have the ability to submit concerts:
+![alt tag](add_concert.png)
+
+Users also have the ability to RSVP to concerts:
+![alt tag](rsvp.png)
+
+Users can optionally buddy up with fellow concert goers:
+![alt tag](buddy_up.png)
+
+The user who receives the request to buddy up is able to accept or reject the invite:
+![alt tag](waiting_for_response.png)
+
+Once the match is confirmed by the recipient of the invite, each user is given
+the option to tweet their new buddy and begin planning!
+![alt tag](confirmed_match.png)
 
 ## Timeline:
 
@@ -161,27 +180,3 @@ January 26th
 - Readme day
 - Added a partial for the off canvas menu on the users page
 - Added a .try method to a call on the application erb to fix failing tests
-
-
-## Screen Shots
-Welcome Page:
-![alt tag](home_page.png)
-
-Users have the ability to search for a concert:
-![alt tag](concert_search.png)
-
-Users have the ability to submit concerts:
-![alt tag](add_concert.png)
-
-Users also have the ability to RSVP to concerts:
-![alt tag](rsvp.png)
-
-Users can optionally buddy up with fellow concert goers:
-![alt tag](buddy_up.png)
-
-The user who receives the request to buddy up is able to accept or reject the invite:
-![alt tag](waiting_for_response.png)
-
-Once the match is confirmed by the recipient of the invite, each user is given
-the option to tweet their new buddy and begin planning!
-![alt tag](confirmed_match.png)
