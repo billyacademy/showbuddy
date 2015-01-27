@@ -8,6 +8,4 @@ class VenuesController < ApplicationController
     @concerts = Concert.where(venue_id: params[:id])
     @next_concert = @concerts.order('date').first
   end
-
-  private
 end
