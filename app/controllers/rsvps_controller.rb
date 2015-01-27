@@ -1,6 +1,5 @@
 class RsvpsController < ApplicationController
     def new
-      @rsvp = Rsvp.new
     end
 
     def create
@@ -11,11 +10,6 @@ class RsvpsController < ApplicationController
         redirect_to concert_path(params[:concert_id]), notice: "You have successfully RSVP'd"
       end
     end
-
-    def show
-      @rsvp = Rsvp.find(params[:id])
-    end
-
 
     private
 
