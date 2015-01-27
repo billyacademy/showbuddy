@@ -43,6 +43,8 @@ Below is a table that encapsulates a rough draft of the weighted rating system. 
 |**Dislike** | `0/200`| `0/50`| `100/100`| `0/0`
 |**Dont Know** | `0/25`| `0/10`| `0/0`| `25/25`
 
+### Future features
+
 2. Create a friend and chat system where users can either live chat or post private messages to each other - rather than rely on twitter <br>
 3. Make user pages more descriptive, add some options to allow users to fill in "about me" type information
 
