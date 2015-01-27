@@ -1,15 +1,15 @@
 $(function() {
-  var $invites = $('#invites')
-  var $responses = $('#responses')
-  var $matches = $('#confirmations')
-  var $rejections = $('#rejections')
-  var $dash = $('#dash-content')
+  var $invites = $('#invites');
+  var $responses = $('#responses');
+  var $matches = $('#confirmations');
+  var $rejections = $('#rejections');
+  var $dash = $('#dash-content');
 
-  var $invitesContent = $('#invites-content')
-  var $responsesContent = $('#response-content')
-  var $matchesContent = $('#match-content')
-  var $rejectionsContent = $('#rejection-content')
-  var $dashContent = $('#dash-content')
+  var $invitesContent = $('#invites-content');
+  var $responsesContent = $('#response-content');
+  var $matchesContent = $('#match-content');
+  var $rejectionsContent = $('#rejection-content');
+  var $dashContent = $('#dash-content');
 
   $invitesContent.hide();
   $responsesContent.hide();
