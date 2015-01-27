@@ -182,3 +182,8 @@ January 26th
 - Readme day
 - Added a partial for the off canvas menu on the users page
 - Added a .try method to a call on the application erb to fix failing tests
+
+January 27th
+- Wrote some more feature test to bring test coverage up to 97%
+- Code cleanup / Add Hound
+- Add image to user factory
