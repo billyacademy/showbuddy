@@ -9,7 +9,8 @@ class MatchesController < ApplicationController
     @match.concert_id = params[:concert_id]
     @recipient_user = User.find(@match.receiver_id)
     if @match.save
-      flash[:notice] = "A request to buddy up has been sent to #{@recipient_user.name}"
+      flash[:notice] = "A request to buddy up has been sent to
+      #{@recipient_user.name}"
       redirect_to concert_path(params[:concert_id])
     end
   end
