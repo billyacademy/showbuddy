@@ -27,6 +27,7 @@ FactoryGirl.define do
       sequence(:uid) { |n| "297498533#{n}" }
       sequence(:name) { |n| "Show__Buddy#{n}" }
       admin false
+      image "http://pbs.twimg.com/profile_images/449457378/n16100392_35034513_7829_normal.jpg"
     end
   end
 end
