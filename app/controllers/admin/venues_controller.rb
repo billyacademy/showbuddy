@@ -13,6 +13,7 @@ class Admin::VenuesController < ApplicationController
     @venue = Venue.new(venue_params)
     if @venue.save
       redirect_to admin_venues_path
+      flash[:message] = "You have successfully created a venue"
     else
       render :new
     end
@@ -40,7 +41,7 @@ class Admin::VenuesController < ApplicationController
       redirect_to admin_venues_path
     else
       redirect_to edit_admin_venue_path()
-      flash[:alert] = "You must be signed in to update a venue."
+      flash[:alert] = "Please make sure to fill in all required fields."
     end
   end
 
