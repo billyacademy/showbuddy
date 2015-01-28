@@ -187,3 +187,6 @@ January 27th
 - Wrote some more feature test to bring test coverage up to 97%
 - Code cleanup / Add Hound
 - Add image to user factory
+
+January 28th
+- Identified the guest list partial on the concerts show page as an area that needs refactoring.  Should not be calling Match.find on the view.
