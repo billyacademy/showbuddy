@@ -13,6 +13,8 @@ end
 
 Concert.delete_all
 Venue.delete_all
+Rsvp.delete_all
+Match.delete_all
 Venue.create(
   name: 'The Sinclair',
   address_line_1: "52 Church Street",
