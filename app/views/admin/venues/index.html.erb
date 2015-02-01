@@ -1,8 +1,10 @@
-<h1> Admin: Venues </h1>
-
+<h1> Venues </h1>
+<div class="venues-buttons">
   <h1><% @venues.each do |venue| %></h1>
     <ul>
-    <%= link_to venue.name, venue_path(venue) %><%= button_to "Delete #{venue.name}", admin_venue_path(venue), method: :delete, data: { confirm: "Are you sure?"} %>
-    <%= link_to "Update #{venue.name}", edit_admin_venue_path(venue) %>
+    <%= link_to venue.name, venue_path(venue), class: "button" %>
+    <%= button_to "Delete #{venue.name}", admin_venue_path(venue), method: :delete, data: { confirm: "Are you sure?"}, class: "alert button" %>
+    <%= link_to "Update #{venue.name}", edit_admin_venue_path(venue), class: "success button" %>
     </ul><br>
   <% end %>
+</div>
