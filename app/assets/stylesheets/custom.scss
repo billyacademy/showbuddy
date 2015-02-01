@@ -145,3 +145,9 @@ h1, h2, h3, h4, h5, h6 {
 .alert-box {
   margin-bottom: 0rem;
 }
+
+.venues-buttons a.button, input.alert.button{
+  min-width: 500px;
+  margin-bottom: 0rem;
+  opacity: .9;
+}
