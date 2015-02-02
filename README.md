@@ -46,7 +46,8 @@ Below is a table that encapsulates a rough draft of the weighted rating system. 
 ### Future features
 
 2. Create a friend and chat system where users can either live chat or post private messages to each other - rather than rely on twitter <br>
-3. Make user pages more descriptive, add some options to allow users to fill in "about me" type information
+3. Make user pages more descriptive, add some options to allow users to fill in "about me" type information <br>
+4. Archive concerts that have already happened OR only show future concerts in the view
 
 ## Screen Shots
 Welcome Page:
@@ -190,3 +191,6 @@ January 27th
 
 January 28th
 - Identified the guest list partial on the concerts show page as an area that needs refactoring.  Should not be calling Match.find on the view.
+
+February 1st
+- Styled the Admin sections of the application, added colored buttons
