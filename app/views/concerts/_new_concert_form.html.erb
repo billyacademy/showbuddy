@@ -1,76 +1,76 @@
-
-  <div class="concert-form">
-    <div class="transbox">
-    <%= form_for @concert do |f|%>
-      <div class="small-6 large-6 columns small-centered">
-        <h2>Add a Concert </h2>
-        <div class="row">
-          <div class="large-12 small-12 columns">
-            <div>
-              <%= f.label :venue_id %>
-              <%= f.select :venue_id, options_for_select(@venues) %>
-            </div>
-          </div>
-
-        <div class="large-6 small-12 columns">
-          <div>
-            <%= f.label :artist_1 %>
-            <%= f.text_field :artist_1 %>
-          </div>
-        </div>
-
-        <div class="large-6 small-12 columns">
-          <div>
-            <%= f.label :artist_2 %>
-            <%= f.text_field :artist_2 %>
-          </div>
-        </div>
-
-        <div class="large-6 small-12 columns">
-          <div>
-            <%= f.label :artist_3 %>
-            <%= f.text_field :artist_3 %>
-          </div>
-        </div>
-
-        <div class="large-6 small-12 columns">
-          <div>
-            <%= f.label :artist_4 %>
-            <%= f.text_field :artist_4 %>
-          </div>
-        </div>
-
-        <div class="large-6 small-12 columns">
-          <div>
-            <%= f.label :date %>
-            <%= f.date_select :date, order: [:month, :day, :year] %>
-          </div>
-        </div>
-
-        <div class="large-3 small-12 columns">
-          <div>
-            <%= f.label :time %>
-            <%= f.select :time, options_for_select([["12pm", "12pm"], ["1pm", "1pm"],
-            ["2pm", "2pm"], ["3pm", "3pm"], ["4pm", "4pm"], ["5pm", "5pm"],
-            ["6pm", "6pm"], ["7pm", "7pm"], ["8pm", "8pm"], ["9pm", "9pm"],
-            ["10pm", "10pm"], ["11pm", "11pm"], ["Midnight", "Midnight"]]) %>
-          </div>
-        </div>
-
+<div class="concert-form">
+  <div class="transbox">
+  <%= form_for @concert do |f|%>
+    <div class="small-6 large-6 columns small-centered">
+      <h2>Add a Concert </h2>
+      <div class="row">
         <div class="large-12 small-12 columns">
           <div>
-            <%= f.label :url, "Link to Event" %>
-            <%= f.text_field :url %>
+            <%= f.label :venue_id %>
+            <%= f.select :venue_id, options_for_select(@venues) %>
           </div>
         </div>
 
-        <div class="large-3 small-12 columns">
-          <div>
-            <%= f.button "Submit"%>
-          </div>
+      <div class="large-6 small-12 columns">
+        <div>
+          <%= f.label :artist_1 %>
+          <%= f.text_field :artist_1 %>
         </div>
       </div>
+
+      <div class="large-6 small-12 columns">
+        <div>
+          <%= f.label :artist_2 %>
+          <%= f.text_field :artist_2 %>
+        </div>
+      </div>
+
+      <div class="large-6 small-12 columns">
+        <div>
+          <%= f.label :artist_3 %>
+          <%= f.text_field :artist_3 %>
+        </div>
+      </div>
+
+      <div class="large-6 small-12 columns">
+        <div>
+          <%= f.label :artist_4 %>
+          <%= f.text_field :artist_4 %>
+        </div>
+      </div>
+
+      <div class="large-6 small-12 columns">
+        <div>
+          <%= f.label :date %>
+          <%= f.date_select :date, order: [:month, :day, :year] %>
+        </div>
+      </div>
+
+      <div class="large-3 small-12 columns">
+        <div>
+          <%= f.label :time %>
+          <%= f.select :time, options_for_select([["12pm", "12pm"], ["1pm", "1pm"],
+          ["2pm", "2pm"], ["3pm", "3pm"], ["4pm", "4pm"], ["5pm", "5pm"],
+          ["6pm", "6pm"], ["7pm", "7pm"], ["8pm", "8pm"], ["9pm", "9pm"],
+          ["10pm", "10pm"], ["11pm", "11pm"], ["Midnight", "Midnight"]]) %>
+        </div>
+      </div>
+
+      <div class="large-12 small-12 columns">
+        <div>
+          <%= f.label :url, "Link to Event" %>
+          <%= f.text_field :url %>
+        </div>
+      </div>
+
+      <div class="large-3 small-12 columns">
+        <div>
+          <%= f.button "Submit"%>
+        </div>
+      </div>
+
+      </div>
     </div>
-    <% end %>
+  <% end %>
   </div>
-  </div>
+</div>
