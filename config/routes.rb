@@ -3,9 +3,6 @@ Rails.application.routes.draw do
 
   resources :concerts, only: [:new, :index, :create, :show] do
     resources :rsvps, only: [:create, :new, :show]
-  end
-
-  resources :concerts, only: [:new, :index, :create, :show] do
     resources :matches, only: [:create, :new, :show,  :update]
   end
 
