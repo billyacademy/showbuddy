@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     user = User.from_omniauth(env["omniauth.auth"])
     session[:user_id] = user.id
     redirect_to root_path, notice: "Signed in!"
-    if env["omniauth.auth"]["info"]["image"] != user.image
+    if env["omniauth.auth"]["info"]["image"] != user.image && env["omniauth.auth"]["info"]["image"] !=  nil
       user.image = env["omniauth.auth"]["info"]["image"]
       user.save
     end
